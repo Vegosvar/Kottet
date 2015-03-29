@@ -1,0 +1,214 @@
+//***************** VARIABLES ******************//
+
+@color-lightBlue:     #43c4e3;
+@color-mediumBlue:    #44c4e1;
+@color-darkBlue:      #1c9dba;
+
+@color-light:         #ffffff;
+@color-lightGray:     #f6f6f6;
+@color-mediumGray:    #d0d2d2;
+@color-darkGray:      #424343;
+@color-dark:          #1b1b1b;
+
+@color-brown:         #6f412a;
+@color-darkBrown:     #3a2213;
+
+@brand-color:         #FAA52C;
+
+@brand-font:          'Open Sans', sans-serif;
+
+
+//***************** GLOBAL ******************//
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: @brand-font !important;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.preamble {
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+::selection {
+  background: @color-lightBlue;
+  color: #fff;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+//***************** MIXINS ******************//
+
+.transition (@prop: all, @time: 0.15s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+
+
+//***************** SHORTCUTS ******************//
+
+.hideMobile {
+  @media (max-width: 768px) { 
+    display: none;
+  }
+}
+
+//***************** LAYOUT ******************//
+
+
+header {
+  &.menu {
+    position: fixed;
+    border: none;
+    color: @color-light;
+    margin-bottom: 0;
+    background: @brand-color;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.04);
+    z-index: 100;
+    width: 100%;
+    .fixed-container {
+      background: @brand-color;
+    }
+  .logo {
+    float: left;
+    img {
+      margin-top: 5px;
+      height: 35px;
+      width: auto;
+      display: inline;
+      .transition(all, 0.1s, ease-in);
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+    .share {
+      float: right;
+      margin: 0;
+      li {
+        list-style: none;
+        float: right;
+        a {
+          .transition(all, 0.1s, ease-in);
+          color: @color-light;
+          font-size: 15px;
+          padding: 15px 20px;
+          display: inline-block;
+          &:hover {
+            text-decoration: none;
+            color: @brand-color;
+            background: @color-lightGray;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.hero {
+  padding-top: 150px;
+  padding-bottom: 120px;
+  text-align: center;
+  .transition(padding-top, 0.1s, ease-in);
+  @media (max-width: 768px) { 
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+  .logo {
+    padding: 0 30px;
+    margin-bottom: 30px;
+  }
+  .creds {
+    opacity: 0.2;
+    .transition(all, 0.1s, ease-in);
+    width: 180px;
+    &:hover {
+      opacity: 0.5;
+    }
+    @media (max-width: 768px) { 
+      width: 130px;
+    }
+  }
+}
+
+
+
+@-moz-keyframes tilt { 
+  0% { -moz-transform: rotate(3deg); }
+  50% { -moz-transform: rotate(-3deg); }
+  100% { -moz-transform: rotate(3deg); } 
+}
+@-webkit-keyframes tilt { 
+  0% { -webkit-transform: rotate(3deg); }
+  50% { -webkit-transform: rotate(-3deg); }
+  100% { -webkit-transform: rotate(3deg); } 
+}
+@keyframes tilt { 
+  0% { -webkit-transform: rotate(3deg); transform:rotate(3deg); }
+  50% { -webkit-transform: rotate(-3deg); transform:rotate(-3deg); }
+  100% { -webkit-transform: rotate(3deg); transform:rotate(3deg); } 
+}
+
+
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
+.del1 {
+  background: #141C26;
+  padding: 60px 0 0 0;
+  color: #fff;
+  .iss {
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+    width: 200px;
+    .transition(width, 0.5s, ease-in);
+    -webkit-animation:tilt 8s infinite;
+    -moz-animation:tilt 8s infinite;
+    animation:tilt 8s infinite;
+    @media (max-width: 768px) {
+      width: 60px;
+      right: 15px;
+    }
+  }
+  .moon {
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+  }
+  h1 {
+    font-size: 45px !important;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .earth {
+    margin-top: 80px;
+    width: 100%;
+  }
+}
