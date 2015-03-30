@@ -71,6 +71,10 @@ img {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 //***************** LAYOUT ******************//
 
 
@@ -152,60 +156,99 @@ header {
 
 
 
-@-moz-keyframes tilt { 
-  0% { -moz-transform: rotate(3deg); }
-  50% { -moz-transform: rotate(-3deg); }
-  100% { -moz-transform: rotate(3deg); } 
-}
-@-webkit-keyframes tilt { 
-  0% { -webkit-transform: rotate(3deg); }
-  50% { -webkit-transform: rotate(-3deg); }
-  100% { -webkit-transform: rotate(3deg); } 
-}
-@keyframes tilt { 
-  0% { -webkit-transform: rotate(3deg); transform:rotate(3deg); }
-  50% { -webkit-transform: rotate(-3deg); transform:rotate(-3deg); }
-  100% { -webkit-transform: rotate(3deg); transform:rotate(3deg); } 
-}
 
 
-@-moz-keyframes spin { 
-  100% { -moz-transform: rotate(360deg); } 
+@keyframes shit { 
+  0% { opacity: 0; font-size: 14px; } 
+  10% { opacity: 1; font-size: 25px; }
+  100% { opacity: 0; font-size: 10px; } 
 }
-@-webkit-keyframes spin { 
-  100% { -webkit-transform: rotate(360deg); } 
-}
+
 @keyframes spin { 
   100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
 }
+
+@keyframes tilt { 
+  0% { transform:rotate(10deg); }
+  50% { transform:rotate(15deg); }
+  100% { transform:rotate(10deg); } 
+}
+
+@keyframes houston_we_have_a_problem { 
+  0% { transform: rotate(12deg); }
+  1% { transform: rotate(0deg); }
+  2% { transform: rotate(10deg); }
+  100% { width: 0px; transform: rotate(60deg); right: 200px; } 
+}
+
+@keyframes star { 
+  0% { top: 0%; right: 0%; opacity: 0; }
+  50% { opacity: 0.5; width: 4px; height: 4px; }
+  100% { top: 100%; right: 100%; opacity: 0; }
+}
+
 
 .del1 {
   background: #141C26;
   padding: 60px 0 0 0;
   color: #fff;
+  .stars {
+    z-index: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    &.pos1 { top: 20px; left: 0px; .star { animation: star 5s infinite linear; } }
+    &.pos2 { top: 200px; left: 100px; .star { animation: star 4s infinite linear; } }
+    &.pos3 { top: 100px; right: 50px; .star { animation: star 3s infinite linear; } }
+    .star {
+      z-index: 1;
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 10px;
+      background: #fff;
+    }
+  }
   .iss {
     position: absolute;
-    right: 0;
+    right: 15px;
     bottom: 100px;
     width: 200px;
-    .transition(width, 0.5s, ease-in);
-    -webkit-animation:tilt 8s infinite;
-    -moz-animation:tilt 8s infinite;
-    animation:tilt 8s infinite;
+    text-align: center;
+    &.functional {
+      .transition(all, 0.5s, ease-in);
+      animation: tilt 8s infinite;
+      span {
+        opacity: 0;
+      }
+    }
+    &.houston_we_have_a_problem {
+      .transition(all, 0.5s, ease-in);
+      animation: houston_we_have_a_problem 8s forwards;
+      span {
+        opacity: 1;
+        -webkit-animation: shit 4s forwards;
+        -moz-animation: shit 4s forwards;
+        animation: shit 4s forwards;
+      }
+    }
     @media (max-width: 768px) {
       width: 60px;
-      right: 15px;
+      right: 30px;
     }
   }
   .moon {
-    -webkit-animation:spin 30s linear infinite;
-    -moz-animation:spin 30s linear infinite;
+    z-index: 1;
     animation:spin 30s linear infinite;
   }
   h1 {
     font-size: 45px !important;
     margin-top: 40px;
     margin-bottom: 20px;
+    border-bottom: 2px solid rgba(250,250,250,0.1);
+    display: inline-block;
+    padding-bottom: 17px;
+    padding: 0px 20px 19px 20px;
   }
   .earth {
     margin-top: 80px;

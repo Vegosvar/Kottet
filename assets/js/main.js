@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+    $( '.iss' ).click(function () {
+        $('.iss').removeClass( "functional" ).addClass( "houston_we_have_a_problem" );
+    })
+
+})
+
+/*
+$(document).ready(function () {
     var votes = null
 
     $('#ja').click(function () {
@@ -60,3 +69,5 @@ $(document).ready(function () {
         }
     })
 })
+*/
+
