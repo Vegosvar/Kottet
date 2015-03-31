@@ -1,4 +1,4 @@
-//***************** VARIABLES ******************//
+/***************** VARIABLES ******************/
 
 @color-lightBlue:     #43c4e3;
 @color-mediumBlue:    #44c4e1;
@@ -18,14 +18,23 @@
 @brand-font:          'Open Sans', sans-serif;
 
 
-//***************** GLOBAL ******************//
+/***************** GLOBAL ******************/
 
 body {
+  background: #f6f6f6;
   -webkit-font-smoothing: antialiased;
-  font-family: @brand-font !important;
+  font-family: @brand-font;
+}
+
+h2 {
+  font-size: 25pt;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 p {
+  font-size: 13pt;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -52,7 +61,7 @@ img {
 }
 
 
-//***************** MIXINS ******************//
+/***************** MIXINS ******************/
 
 .transition (@prop: all, @time: 0.15s, @ease: linear) {
   -webkit-transition: @prop @time @ease;
@@ -63,7 +72,7 @@ img {
 }
 
 
-//***************** SHORTCUTS ******************//
+/***************** SHORTCUTS ******************/
 
 .hideMobile {
   @media (max-width: 768px) { 
@@ -75,7 +84,7 @@ img {
   cursor: pointer;
 }
 
-//***************** LAYOUT ******************//
+/***************** LAYOUT ******************/
 
 
 header {
@@ -155,8 +164,19 @@ header {
 }
 
 
+.primary_img {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.text {
+  @media (max-width: 768px) {
+    margin-top: 0 !important;
+  }
+}
 
 
+/***************** DEL 1 ******************/
 
 @keyframes shit { 
   0% { opacity: 0; font-size: 14px; } 
@@ -170,14 +190,14 @@ header {
 
 @keyframes tilt { 
   0% { transform:rotate(10deg); }
-  50% { transform:rotate(15deg); }
+  50% { transform:rotate(16deg); }
   100% { transform:rotate(10deg); } 
 }
 
 @keyframes houston_we_have_a_problem { 
   0% { transform: rotate(12deg); }
-  1% { transform: rotate(0deg); }
-  2% { transform: rotate(10deg); }
+  2% { transform: rotate(0deg); }
+  4% { transform: rotate(10deg); }
   100% { width: 0px; transform: rotate(60deg); right: 200px; } 
 }
 
@@ -192,6 +212,7 @@ header {
   background: #141C26;
   padding: 60px 0 0 0;
   color: #fff;
+  margin-bottom: 60px;
   .stars {
     z-index: 0;
     position: absolute;
@@ -216,19 +237,17 @@ header {
     width: 200px;
     text-align: center;
     &.functional {
-      .transition(all, 0.5s, ease-in);
+      .transition(all, 0.1s, ease-in-out);
       animation: tilt 8s infinite;
       span {
         opacity: 0;
       }
     }
     &.houston_we_have_a_problem {
-      .transition(all, 0.5s, ease-in);
-      animation: houston_we_have_a_problem 8s forwards;
+      .transition(all, 0.8s, ease-in);
+      animation: houston_we_have_a_problem 5s forwards ease-in;
       span {
         opacity: 1;
-        -webkit-animation: shit 4s forwards;
-        -moz-animation: shit 4s forwards;
         animation: shit 4s forwards;
       }
     }
@@ -253,5 +272,86 @@ header {
   .earth {
     margin-top: 80px;
     width: 100%;
+  }
+}
+
+
+
+/***************** DEL 2 ******************/
+
+@keyframes butterfly { 
+  0% { top: 0px; } 
+  50% { top: -10px; } 
+  100% { top: 0px; } 
+}
+@keyframes butterfly_shadow { 
+  0% { top: 10px; opacity: 0.2; } 
+  50% { top: 13px; opacity: 0.05;} 
+  100% { top: 10px; opacity: 0.2; } 
+}
+
+.del2 {
+  margin-bottom: 30px;
+  .butterfly {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    &.active {
+      cursor: inherit;
+      animation: butterfly 1s forwards;
+    }
+  }
+  .butterfly_shadow {
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.2;
+    &.active {
+      animation: butterfly_shadow 1s forwards;
+    }
+  }
+  .text {
+    margin-top: 110px;
+  }
+}
+
+
+
+
+/***************** DEL 2 ******************/
+
+@keyframes shake { 
+  0% { transform:rotate(10deg); }
+  50% { transform:rotate(20deg); }
+  100% { transform:rotate(17deg); } 
+}
+
+.del3 {
+  margin-bottom: 30px;
+  .orange {
+    position: absolute;
+    left: 74%;
+    bottom: 58%;
+    animation: tilt 3s infinite;
+  }
+  .orange_eaten {
+    display: none;
+    position: absolute;
+    left: 74%;
+    bottom: 58%;
+    animation: shake 1s forwards;
+  }
+  .orange_gone {
+    display: none;
+    position: absolute;
+    left: 74%;
+    bottom: 58%;
+    animation: shake 0.5s forwards;
+  }
+  .text {
+    margin-top: 100px;
   }
 }
