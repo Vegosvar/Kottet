@@ -167,6 +167,7 @@ header {
 .primary_img {
   margin-bottom: 15px;
   width: 100%;
+  padding: 0 15px;
 }
 
 .text {
@@ -178,9 +179,15 @@ header {
 
 /***************** DEL 1 ******************/
 
+@keyframes explosion { 
+  0% { width: 0; opacity: 1; }
+  100% { width: 50%; opacity: 0; }
+}
+
 @keyframes shit { 
   0% { opacity: 0; font-size: 14px; } 
-  10% { opacity: 1; font-size: 25px; }
+  10% { opacity: 0; font-size: 14px; } 
+  20% { opacity: 1; font-size: 25px; }
   100% { opacity: 0; font-size: 10px; } 
 }
 
@@ -236,6 +243,15 @@ header {
     bottom: 100px;
     width: 200px;
     text-align: center;
+    .explosion {
+      position: absolute;
+      top: 62%;
+      left: 40%;
+      width: 0;
+      &.detonate {
+        animation: explosion 0.5s infinite;
+      }
+    }
     &.functional {
       .transition(all, 0.1s, ease-in-out);
       animation: tilt 8s infinite;
@@ -281,13 +297,13 @@ header {
 
 @keyframes butterfly { 
   0% { top: 0px; } 
-  50% { top: -10px; } 
+  50% { top: -5px; } 
   100% { top: 0px; } 
 }
 @keyframes butterfly_shadow { 
-  0% { top: 10px; opacity: 0.2; } 
-  50% { top: 13px; opacity: 0.05;} 
-  100% { top: 10px; opacity: 0.2; } 
+  0% { top: 5px; opacity: 0.2; } 
+  50% { top: 15px; opacity: 0.05;} 
+  100% { top: 5px; opacity: 0.2; } 
 }
 
 .del2 {
@@ -299,18 +315,17 @@ header {
     left: 5px;
     &.active {
       cursor: inherit;
-      animation: butterfly 1s forwards;
+      animation: butterfly 1s infinite;
     }
   }
   .butterfly_shadow {
     opacity: 0;
     z-index: 0;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    opacity: 0.2;
+    top: 5px;
+    left: 5px;
     &.active {
-      animation: butterfly_shadow 1s forwards;
+      animation: butterfly_shadow 1s infinite;
     }
   }
   .text {
@@ -322,6 +337,13 @@ header {
 
 
 /***************** DEL 2 ******************/
+
+@keyframes tease { 
+  0% { transform:rotate(10deg); }
+  5% { transform:rotate(16deg); }
+  10% { transform:rotate(10deg); } 
+  100% { transform:rotate(10deg); } 
+}
 
 @keyframes shake { 
   0% { transform:rotate(10deg); }
@@ -335,7 +357,7 @@ header {
     position: absolute;
     left: 74%;
     bottom: 58%;
-    animation: tilt 3s infinite;
+    animation: tease 3s infinite;
   }
   .orange_eaten {
     display: none;

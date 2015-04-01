@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     $( '.iss' ).click(function () {
         $('.iss').removeClass( "functional" ).addClass( "houston_we_have_a_problem" );
+        $('.explosion').addClass( "detonate" );
     })
 
     $( '.butterfly' ).click(function () {
