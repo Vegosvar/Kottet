@@ -20,7 +20,14 @@
 
 /***************** GLOBAL ******************/
 
+@keyframes start { 
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
 body {
+  animation: start 2s forwards;
+  transform-origin: 50% 0%;
   background: #f6f6f6;
   -webkit-font-smoothing: antialiased;
   font-family: @brand-font;
@@ -31,6 +38,7 @@ h2 {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 p {
@@ -50,7 +58,7 @@ strong {
 }
 
 ::selection {
-  background: @color-lightBlue;
+  background: @brand-color;
   color: #fff;
 }
 
@@ -58,6 +66,41 @@ strong {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.source {
+  display: inline-block;
+  font-weight: 300;
+  &.light {
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 1px 8px 2px 8px;
+    font-size: 9pt;
+    border-radius: 15px;
+    .transition(all, 0.1s, ease-in);
+    &:hover {
+      color: #555;
+      text-decoration: none;
+    }
+  }
+  &.dark {
+    background: rgba(250,250,250,0.1);
+    color: rgba(250,250,250,0.6);
+    padding: 4px 10px 5px 10px;
+    font-size: 9pt;
+    border-radius: 15px;
+    .transition(all, 0.1s, ease-in);
+    &:hover {
+      background: rgba(250,250,250,0.2);
+      color: rgba(250,250,250,0.8);
+      text-decoration: none;
+    }
+  }
+  &.underline {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 3px;
+    font-size: 10pt;
+  }
 }
 
 
@@ -76,6 +119,12 @@ img {
 
 .hideMobile {
   @media (max-width: 768px) { 
+    display: none;
+  }
+}
+
+.showMobile {
+  @media (min-width: 768px) { 
     display: none;
   }
 }
@@ -138,8 +187,8 @@ header {
 
 
 .hero {
-  padding-top: 150px;
-  padding-bottom: 120px;
+  padding-top: 200px;
+  padding-bottom: 170px;
   text-align: center;
   .transition(padding-top, 0.1s, ease-in);
   @media (max-width: 768px) { 
@@ -336,7 +385,7 @@ header {
 
 
 
-/***************** DEL 2 ******************/
+/***************** DEL 3 ******************/
 
 @keyframes tease { 
   0% { transform:rotate(10deg); }
@@ -377,3 +426,360 @@ header {
     margin-top: 100px;
   }
 }
+
+
+
+/***************** DEL 4 ******************/
+
+.del4 {
+  margin-bottom: 30px;
+  .text {
+    margin-top: 50px;
+  }
+}
+
+
+
+/***************** DEL 5 ******************/
+
+
+@keyframes sun_echo { 
+  0% { transform: scale(1); }
+  50% { transform: scale(1.8); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0; } 
+}
+.del5 {
+  margin-bottom: 30px;
+  .sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #FFF8C3;
+    top: 15%;
+    left: 31%;
+  }
+  .sun_echo {
+    opacity: 0.2;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #FFF8C3;
+    top: 15%;
+    left: 31%;
+    animation: sun_echo 3s infinite;
+  }
+  .text {
+    margin-top: 70px;
+  }
+}
+
+
+
+/***************** DEL 6 ******************/
+
+.del6 {
+  margin-bottom: 60px;
+  .text {
+    margin-top: 80px;
+  }
+}
+
+
+
+
+/***************** DEL 7 - 90% svenskar ******************/
+
+.del7 {
+  padding-top: 100px;
+  background: #231F20;
+  color: #fff;
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  } 
+  h2 {
+    .lg {
+      font-size: 80pt;
+      font-weight: 300;
+      display: block;
+      @media (max-width: 768px) { 
+        font-size: 70pt;
+      }
+    }
+  }
+  .text {
+    margin-bottom: 60px;
+    .source {
+      margin-right: -60px;
+      @media (max-width: 768px) { 
+        margin-right: 0;
+      }
+    }
+  }
+  .primary_img {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/***************** DEL 8 - 90 miljoner djur ******************/
+
+.del8 {
+  padding: 100px 0;
+  background: #eee;
+  color: #333;
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  } 
+  .text {
+    margin-bottom: 60px;
+    h2 {
+      font-weight: 300;
+      .lg {
+        font-size: 60pt;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 10px;
+        @media (max-width: 768px) { 
+          font-size: 50pt;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+  .stats { 
+    text-align: center;
+    .stat {
+      position: relative;
+      display: inline-block;
+      height: 350px;
+      width: 20%;
+      @media (max-width: 768px) { 
+        width: 100%;
+      }
+      .content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 3px;
+        img {
+          margin-top: -70px;
+        }
+        &.chicken {
+          background: #E5A55A;
+        }
+        &.pig {
+          background: #ED827A;
+        }
+        &.cow {
+          background: #603813;
+        }
+        &.lamb {
+          background: #7FA9BF;
+        }
+      }
+    }
+    .numbers {
+      font-size: 17pt;
+      @media (max-width: 768px) {
+        font-size: 11pt; 
+      }
+      .counter {
+        font-weight: 700;
+      }
+      .animal {
+        font-weight: 300;
+        display: block;
+        font-size: 13pt;
+        @media (max-width: 768px) {
+          font-size: 10pt; 
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/***************** DEL 9 - Kossan ******************/
+
+.del9 {
+  color: #fff;
+  background: #6D412F;
+  .text {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    @media (max-width: 768px) { 
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    hr {
+      opacity: 0.1;
+      border-top: 2px solid #fff;
+    }
+  }
+  .primary_img {
+    margin-top: 100px;
+    margin-bottom: 0;
+    @media (max-width: 768px) { 
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding-bottom: 0px;
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+    }
+  }
+}
+
+
+
+
+/***************** DEL 10 - Lamm ******************/
+
+.del10 {
+  color: #fff;
+  background: #A1B4BF;
+  .text {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    @media (max-width: 768px) { 
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    hr {
+      opacity: 0.1;
+      border-top: 2px solid #fff;
+    }
+  }
+  .primary_img {
+    width: 60%;
+    margin-top: 80px;
+    margin-bottom: 0;
+    @media (max-width: 768px) { 
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding: 0 10%;
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+    }
+  }
+}
+
+
+/***************** DEL 11 - Gris ******************/
+
+.del11 {
+  color: #fff;
+  background: #BF7971;
+  .text {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    @media (max-width: 768px) { 
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    hr {
+      opacity: 0.1;
+      border-top: 2px solid #fff;
+    }
+  }
+  .primary_img {
+    width: 50%;
+    margin-top: 150px;
+    margin-bottom: 0;
+    @media (max-width: 768px) { 
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding: 0 10%;
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+    }
+  }
+}
+
+
+
+/***************** DEL 12 - Kyckling ******************/
+
+.del12 {
+  color: #fff;
+  background: #EA9554;
+  .text {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    @media (max-width: 768px) { 
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    hr {
+      opacity: 0.1;
+      border-top: 2px solid #fff;
+    }
+  }
+  .primary_img {
+    width: 40%;
+    margin-top: 180px;
+    margin-bottom: 0;
+    @media (max-width: 768px) { 
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding: 0 10%;
+    }
+  }
+}
+
+/***************** DEL 13 - Andra djur ******************/
+
+.del13 {
+  padding: 100px 0;
+  color: #fff;
+  background: #808184;
+  @media (max-width: 768px) { 
+    padding: 60px 0;
+  }
+  .primary_img {
+    width: 200px;
+    margin-bottom: 30px;
+  }
+  .secondary_img {
+    margin-top: 15px;
+    width: 80%;
+  }
+}
+
+
+
+/***************** DEL 14 - Svenska djur ******************/
+
+.del14 {
+  padding: 100px 0 0 0;
+  color: #fff;
+  background: #1B75BB;
+  @media (max-width: 768px) { 
+    padding: 60px 0;
+  }
+  .primary_img {
+    margin-bottom: 0;
+  }
+  .mobile {
+    position: relative;
+    width: 100%;
+    .safari {
+      position: absolute;
+      top: 5.4%;
+      left: 42.7%;
+      width: 35.7%;
+      height: 43%;
+      background: #fff;
+      border-radius: 3px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+

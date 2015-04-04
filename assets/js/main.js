@@ -18,8 +18,6 @@ $(document).ready(function () {
         $('.orange_eaten').removeClass( "show" );
         $('.orange_gone').addClass( "show" );
     })
-
-
 })
 
 /*

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Counter Up Examples</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<style>
+body {
+margin: 40px 100px 150px;
+}
+* {
+font-family: 'Open Sans', sans-serif;
+-webkit-transition: all 400ms ease;
+-moz-transition: all 400ms ease;
+-o-transition: all 400ms ease;
+transition: all 400ms ease;
+text-align: center;
+}
+h1, h3 {
+font-weight: 600;
+text-transform: uppercase;
+}
+h3 {
+margin-bottom: 30px;
+color: #999;
+}
+span {
+font-size: 66px;
+color: #555;
+margin-bottom: 350px;
+display: inline-block;
+font-weight: 400;
+text-align: center;
+}
+span > span {
+margin-bottom: 0;
+}
+.circle {
+background: #2980b9;
+width: 200px;
+line-height: 200px;
+display: inline-block;
+color: #fff;
+border-radius: 100%;
+}
+code, code > span {
+text-align: left;
+display: block;
+font-family: Monaco, monospace;
+background: #444;
+color: #fff;
+padding: 20px;
+font-size: 14px;
+margin-bottom: 100px;
+}
+code > span {
+padding: 0;
+margin: 0;
+}
+ @media only screen and (max-width: 1024px) {
+span {
+font-size: 33px;
+margin-bottom: 200px;
+}
+}
+ @media only screen and (max-width: 800px) {
+div > span {
+font-size: 66px;
+display: block;
+width: 100% !important;
+margin-bottom: 100px;
+}
+span {
+font-size: 66px;
+}
+code {
+margin-bottom: 100px;
+}
+}
+</style>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/animation/Animating-Numbers-Counting-Up-with-jQuery-Counter-Up-Plugin.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<h1 style="margin-top:150px;">jQuery Counter Up Examples</h1>
+<h3>Counter Up is a lightweight and easy-to-use jQuery plugin that dynamically counts up to a targeted number (from 0) at a specified speed.</h3>
+<!-- <span><span class="counter circle">12345</span></span> -->
+<div> <span class="counter" style="display: inline-block; width: 32%">52,147</span> <span class="counter" style="display: inline-block; width: 32%">1.9583</span> <span class="counter" style="display: inline-block; width: 32%">12345</span> </div>
+<div> <span style="display: inline-block; width: 32%"><span>$</span><span class="counter">43,753</span></span> <span class="counter" style="display: inline-block; width: 32%">1,734,195.10</span> <span class="counter" style="display: inline-block; width: 32%">849203</span> </div>
+<div> <span class="counter" style="display: inline-block; width: 32%">0.8412</span> <span class="counter" style="display: inline-block; width: 32%">958393.10</span> <span class="counter" style="display: inline-block; width: 32%">5,123,348</span> </div>
+<div> <span class="counter" style="display: inline-block; width: 32%">52,147</span> <span class="counter" style="display: inline-block; width: 32%">1.9583</span> <span class="counter" style="display: inline-block; width: 32%">12345</span> </div>
+<div> <span style="display: inline-block; width: 32%"><span>$</span><span class="counter">43,753</span></span> <span class="counter" style="display: inline-block; width: 32%">1,734,195.10</span> <span class="counter" style="display: inline-block; width: 32%">849203</span> </div>
+<div> <span class="counter" style="display: inline-block; width: 32%">0.8412</span> <span class="counter" style="display: inline-block; width: 32%">958393.10</span> <span class="counter" style="display: inline-block; width: 32%">5,123,348</span> </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+<script src="jquery.counterup.min.js"></script> 
+<script>
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

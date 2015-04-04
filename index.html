@@ -54,12 +54,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <script src="assets/js/modernizr.js"></script>
   <script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+  <script src="assets/components/counter/jquery.counterup.min.js" type="text/javascript"></script>
   <script src="assets/js/main.js" type="text/javascript"></script>
+
 
   <script>
     var isIe = false;
@@ -74,9 +78,17 @@
           return $(this).attr('src').replace('.svg', '.png');
         })
       }
-      jQuery('.hasPopover').popover({ html: true, trigger: "hover", container: "body" })
     })
+
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 20,
+            time: 1000
+        });
+    });
+
   </script>
+
 </head>
 
 <body>
@@ -121,7 +133,7 @@
 
           <div class="divider"></div>
           <h1>Berättelsen om köttet</h1>
-          <p class="preamble">Varmt välkommen till berättelsen om köttindustrin</p>
+          <p class="preamble">Varmt välkommen till berättelsen om köttindustrin i Sverige</p>
           <p>Människan har utvecklats snabbt. Vi har rest till månen och uppfunnit selfie sticks.<br/>Men något som lever kvar är vår köttkonsumtion. Vi bara älskar kött.</p> 
           <p>Kött är för många en självklarhet, för andra är det en jobbig verklighet.<br/>Men vilka hemligheter döljer sig i det svenska köttet?</p>
 
@@ -140,12 +152,12 @@
   <div class="del2">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5 col-md-4">
           <img src="assets/img/butterfly.svg" class="butterfly pointer">
           <img src="assets/img/butterfly_shadow.svg" class="butterfly_shadow">
           <img src="assets/img/first_human.svg" class="primary_img">
         </div>
-        <div class="col-sm-7 col-sm-offset-1">
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
           <div class="text">
             <h2>Det har varit en lång utveckling</h2>
             <p>För några miljoner år sedan började människan att utvecklas.<br/> Då hoppade även vi runt i skogen och letade mat för att överleva dagen.</p>
@@ -159,16 +171,239 @@
   <div class="del3">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5 col-md-4">
             <img src="assets/img/orange.svg" class="orange pointer">
             <img src="assets/img/orange_eaten.svg" class="orange_eaten pointer">
             <img src="assets/img/orange_gone.svg" class="orange_gone">
             <img src="assets/img/tool.svg" class="primary_img">
         </div>
-        <div class="col-sm-7 col-sm-offset-1">
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
           <div class="text">
             <h2>Vi började uppfinna verktyg</h2>
-            <p>Med tiden blev vi smartare och hittade nya lösningar för att underlätta vår tillvaro.</p>
+            <p>Med tiden blev vi smartare och hittade nya lösningar för att underlätta vår tillvaro, med hjälp av våra händer så började vi att tillverka saker.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del4">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <img src="assets/img/hunter.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Och även vapen</h2>
+            <p>Människan är varken köttätare eller växtätare, vi är däremot allätare. Det betyder att vi kan välja själv mellan att äta andra djur eller vegetabilisk föda. <a href="http://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/all%C3%A4tare" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <p>Tillvaron under äldre stenåldern (ca 40 000-10 000 f.Kr) styrdes helt och hållet av jakten på föda vilket gjorde att vi följde bytesdjurens fotspår. Vi var främst jägare men åt även de växter som vi kunde hitta. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+        <div class="sun"></div>
+        <div class="sun_echo"></div>
+            <img src="assets/img/farmer.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Vi började odla vår egen mat</h2>
+            <p>För omkring 12 000 år sedan lärde vi oss att odla och blev jordbrukare. Inte längre behövde vi jaga vår föda, vi kunde odla det själv. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del6">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <img src="assets/img/farm.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Men vi behöll djuren som boskap</h2>
+            <p>Vi blev bofasta och kunde ordna tillvaron på ett effektivare sätt, men vi behöll djuren som boskap. Vi gjorde dom tama och fortsatte att äta dom. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del7">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text text-center">
+            <h2><span class="lg"><span class="counter">90</span>%</span> av alla svenskar äter kött idag <a href="http://www.djurensratt.se/om-djurens-ratt/nyheter/var-tionde-svensk-ar-vegetarian" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></h2>
+            <p>Med en så stor efterfrågan... hur ser industrin ut?</p>
+          </div>
+        </div>
+        <img src="assets/img/ordering.svg" class="primary_img">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del8">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text text-center">
+            <h2>Vi slaktar cirka<span class="lg"><span class="counter">90</span> miljoner</span> djur i Sverige varje år</h2>
+            <p class="source underline">Jordbruksverkets statistikdatabas 2013</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content chicken" style="height: 96%;"><img src="assets/img/icon_chicken.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">83,265,440</span>
+              <span class="animal">Kycklingar</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content pig" style="height: 3%;"><img src="assets/img/icon_pig.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">2,550,710</span>
+              <span class="animal">Grisar</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content cow" style="height: 0.5%;"><img src="assets/img/icon_cow.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">417,390</span>
+              <span class="animal">Nötdjur</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content lamb" style="height: 0.3%;"><img src="assets/img/icon_lamb.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">252,880</span>
+              <span class="animal">Får & lamm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="del9">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_cow.svg" alt="Ko illustration" class="primary_img showMobile">
+            <h2>First up, kossan</h2>
+            <p>Hon kallas även för nötdjur. Ordet nöt kommer från det forngermanska ordet ‘nauta’, vilket betyder egendom. <a href="http://g3.spraakdata.gu.se/saob/show.phtml?filenr=1/170/216.html" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <p>Det finns idag 1,4 miljoner kor, kalvar, kvigor och tjurar i Sverige som väntar på att slaktas i år. Deras kött kommer att användas för att tillverka hamburgare, filéer och kalvkotletter.</p> 
+            <p>Förutom det så insemineras kor med sperma för att föda kalvar. På så sätt kan de fortsätta producera mjölk. Mjölken används sedan för att producera mejeriprodukter.</p>
+            <hr>
+            <p>Kalven slaktas efter <strong>18 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_cow.svg" alt="Ko illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_lamb.svg" alt="Lamm illustration" class="primary_img showMobile">
+            <h2>Lamm</h2>
+            <p>Lammen behöver klippas varje år på grund av den extrema pälstillväxten. </p>
+            <p>Anledningen till att ullen växer så fort beror på att vi människor har avlat fram lammen till att göra det.</p>
+            <hr>
+            <p>Slaktas efter <strong>6 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/far-och-lamm" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_lamb.svg" alt="Lamm illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del11">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_pig.svg" alt="Gris illustration" class="primary_img showMobile">
+            <h2>Gris</h2>
+            <p>Den här krabaten har fått svansen avbiten, blivit kastrerad utan bedövning och lider av magsår. Grisen kommer bland annat att användas för bacon och fläsk, men också för gelatin, en vanlig tillsats i en del godisar, glassar och kosmetika.</p> 
+            <p>Han är ganska lik oss, precis som människan så är han allätare.</p>
+            <hr>
+            <p>Slaktas efter <strong>6 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/grisar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_pig.svg" alt="Gris illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="del12">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_chicken.svg" alt="Kyckling illustration" class="primary_img showMobile">
+            <h2>Kyckling</h2>
+            <p>Kycklingar kläcks i maskiner och får därför aldrig träffa sin mamma. Den här kycklingen delar boende tillsammans med några tusen andra kycklingar. <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <hr>
+            <p>Slaktas efter <strong>5 veckor</strong>. Hankycklingar inom äggindustrin slaktas däremot <strong>direkt</strong> efter födseln <a href="http://sverigesradio.se/sida/artikel.aspx?programid=97&artikel=2761983" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_chicken.svg" alt="Kyckling illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del13">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text text-center">
+            <img src="assets/img/rabbit.svg" alt="Kanin illustration" class="primary_img">
+            <h2>Andra djur i maten</h2>
+            <p>Kaniner, renar, hästar, ankor, strutsar, getter, gäss och kalkoner.<br/> 
+            De används alla i svensk livsmedelsindustrin. 
+            <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <img src="assets/img/other_animals.svg" alt="Kyckling illustration" class="secondary_img">
           </div>
         </div>
       </div>
@@ -177,5 +412,34 @@
 
 
 
+
+  <div class="del14">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="mobile">
+            <div class="safari">
+              <div class="page1">
+                <img src="assets/img/mobile_svt.svg" alt="Svt">
+              </div>
+            </div>
+            <img src="assets/img/mobile.svg" alt="Mobil illustration" class="primary_img">
+          </div>
+        </div>
+        <div class="col-sm-7">
+          <div class="text">
+            <h2>De är alla svenska djur</h2>
+            <p>Vi vill gärna tro att de mår bra under den korta perioden som de lever bara för att de är svenska. Trots det så får vi höra på nyheterna år efter år om hur de missköts och utnyttjas.</p>
+            <p>I svenska djurrättsfilmer så som Ett liv som gris får vi se exempel på hur grisar kan ha det.</p>
+            <p>Och på den svenska sidan Walls of glass får vi se foton från svenska slakterier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 </html>
+
+
