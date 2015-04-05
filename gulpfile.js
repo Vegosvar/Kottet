@@ -37,8 +37,7 @@ var paths = {
   ],
 
   misc: [
-    'src/favicon.ico',
-    'CNAME'
+    'src/misc/**'
   ]
 }
 
@@ -81,6 +80,7 @@ gulp.task('less', function () {
         .pipe(plugins.less({ 
           plugins: [autoprefix]
         }))
+        .pipe(plugins.minifyCss())
         .pipe(gulp.dest('dist/assets/css'))
 })
 
@@ -95,7 +95,7 @@ gulp.task('images', function () {
 })
 
 gulp.task('misc', function () {
-  return gulp.src(paths.misc)
+  return gulp.src(paths.misc, { dot: true })
         .pipe(gulp.dest('dist'))
 })
 
