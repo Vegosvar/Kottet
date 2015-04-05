@@ -6,6 +6,7 @@ var less_plugin_auto_prefix = require('less-plugin-autoprefix')
 var autoprefix = new less_plugin_auto_prefix({ browsers: ['last 2 versions'] })
 var ghpages = require('gh-pages')
 var util = require('util')
+var path = require('path')
 
 var sequence_error = function (callback, error) {
   if (error) {
