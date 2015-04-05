@@ -28,6 +28,7 @@
   <link rel="dns-prefetch" href="//kottet.se">
   -->
 
+  <!--
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57x57.png" />
@@ -48,6 +49,7 @@
   <meta name="msapplication-square150x150logo" content="assets/img/favicon/mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="assets/img/favicon/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="assets/img/favicon/mstile-310x310.png" />
+  -->
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
 
@@ -62,32 +64,6 @@
   <script src="assets/js/vendor/jquery.counterup.min.js" type="text/javascript"></script>
   <script src="assets/js/vendor/modernizr.js"></script>
   <script src="assets/js/main.js" type="text/javascript"></script>
-
-
-  <script>
-    var isIe = false;
-
-    if (navigator.userAgent.indexOf("MSIE") > -1 || /rv:11.0/i.test(navigator.userAgent)) {
-      isIe = true;
-    }
-
-    $(document).ready(function () {
-      if (!Modernizr.svgasimg || isIe) {
-        $('img[src*="svg"]').attr('src', function () {
-          return $(this).attr('src').replace('.svg', '.png');
-        })
-      }
-    })
-
-    jQuery(document).ready(function( $ ) {
-        $('.counter').counterUp({
-            delay: 20,
-            time: 1000
-        });
-    });
-
-  </script>
-
 </head>
 
 <body>
