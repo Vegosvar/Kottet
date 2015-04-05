@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="sv"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="sv"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="sv"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="sv"> <!--<![endif]-->
+<head>
+  <title>Berättelsen om köttet</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Köttet.se är en gripande berättelse om det kött som 90% av Sveriges befolkning äter varje dag.">
+  <meta name="keywords" content="kött,köttindustri">
+  <meta name="robots" content="all">
+
+  <meta property="og:site_name" content="Berättelsen om köttet">
+  <meta property="og:title" content="Berättelsen om köttet">
+  <meta property="og:description" content="Köttet.se är en gripande berättelse om det kött som 90% av Sveriges befolkning äter varje dag.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://kottet.se/assets/img/og.png">
+  <meta property="og:url" content="https://kottet.se">
+
+  <!--
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+  <link rel="dns-prefetch" href="//code.jquery.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//cdn.socket.io">
+  <link rel="dns-prefetch" href="//kottet.se">
+  -->
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114x114.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/img/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/img/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/img/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-128.png" sizes="128x128" />
+  <meta name="msapplication-TileImage" content="assets/img/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="assets/img/favicon/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="assets/img/favicon/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="assets/img/favicon/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="assets/img/favicon/mstile-310x310.png" />
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+  <script src="assets/js/vendor/jquery.counterup.min.js" type="text/javascript"></script>
+  <script src="assets/js/vendor/modernizr.js"></script>
+  <script src="assets/js/main.js" type="text/javascript"></script>
+
+
+  <script>
+    var isIe = false;
+
+    if (navigator.userAgent.indexOf("MSIE") > -1 || /rv:11.0/i.test(navigator.userAgent)) {
+      isIe = true;
+    }
+
+    $(document).ready(function () {
+      if (!Modernizr.svgasimg || isIe) {
+        $('img[src*="svg"]').attr('src', function () {
+          return $(this).attr('src').replace('.svg', '.png');
+        })
+      }
+    })
+
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 20,
+            time: 1000
+        });
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+
+  <header class="menu" role="navigation">
+    <div class="container">
+      <div class="pull-left">
+        <a class="logo" href="https://kottet.se"><img src="assets/img/logo_inverted.svg"></a>
+      </div>
+      <ul class="share">
+        <li><a href="https://twitter.com/intent/tweet?hashtags=k%C3%B6ttet,svmat,svpol,svensktkött&original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&text=Komj%C3%B6lkens%20p%C3%A5verkan%20p%C3%A5%20livet&tw_p=tweetbutton&url=https%3A%2F%2Fkottet.se&via=kottet" target="_blank"><span class="hideMobile">Twittra om</span> #köttet</a></li>
+        <li class="visible-sm visible-md visible-lg"><a href="http://facebook.com/kottet.se" target="_blank">Facebook</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div class="hero">
+    <a href="/"><img src="assets/img/logo_color.svg" class="logo" alt="Köttet"></a>
+    <div class="divider"></div>
+    <a href="/"><img src="assets/img/vegosvar.svg" class="creds" alt="Köttet"></a>
+  </div>
+
+
+  <div class="del1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0  text-center">
+
+          <img src="assets/img/moon.svg" class="moon">
+
+          <div class="stars pos1">
+            <div class="star"></div>
+          </div>
+          <div class="stars pos2">
+            <div class="star"></div>
+          </div>
+          <div class="stars pos3">
+            <div class="star"></div>
+          </div>
+
+          <div class="divider"></div>
+          <h1>Berättelsen om köttet</h1>
+          <p class="preamble">Varmt välkommen till berättelsen om köttindustrin i Sverige</p>
+          <p>Människan har utvecklats snabbt. Vi har rest till månen och uppfunnit selfie sticks.<br/>Men något som lever kvar är vår köttkonsumtion. Vi bara älskar kött.</p> 
+          <p>Kött är för många en självklarhet, för andra är det en jobbig verklighet.<br/>Men vilka hemligheter döljer sig i det svenska köttet?</p>
+
+          <img src="assets/img/hero_earth.svg" class="earth">
+          <div class="iss pointer functional">
+            <span>Shit!</span>
+            <img src="assets/img/explosion.svg" class="explosion">
+            <img src="assets/img/iss.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del2">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+          <img src="assets/img/butterfly.svg" class="butterfly pointer">
+          <img src="assets/img/butterfly_shadow.svg" class="butterfly_shadow">
+          <img src="assets/img/first_human.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Det har varit en lång utveckling</h2>
+            <p>För några miljoner år sedan började människan att utvecklas.<br/> Då hoppade även vi runt i skogen och letade mat för att överleva dagen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <img src="assets/img/orange.svg" class="orange pointer">
+            <img src="assets/img/orange_eaten.svg" class="orange_eaten pointer">
+            <img src="assets/img/orange_gone.svg" class="orange_gone">
+            <img src="assets/img/tool.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Vi började uppfinna verktyg</h2>
+            <p>Med tiden blev vi smartare och hittade nya lösningar för att underlätta vår tillvaro, med hjälp av våra händer så började vi att tillverka saker.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del4">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <img src="assets/img/hunter.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Och även vapen</h2>
+            <p>Människan är varken köttätare eller växtätare, vi är däremot allätare. Det betyder att vi kan välja själv mellan att äta andra djur eller vegetabilisk föda. <a href="http://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/all%C3%A4tare" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <p>Tillvaron under äldre stenåldern (ca 40 000-10 000 f.Kr) styrdes helt och hållet av jakten på föda vilket gjorde att vi följde bytesdjurens fotspår. Vi var främst jägare men åt även de växter som vi kunde hitta. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+        <div class="sun"></div>
+        <div class="sun_echo"></div>
+            <img src="assets/img/farmer.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Vi började odla vår egen mat</h2>
+            <p>För omkring 12 000 år sedan lärde vi oss att odla och blev jordbrukare. Inte längre behövde vi jaga vår föda, vi kunde odla det själv. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del6">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <img src="assets/img/farm.svg" class="primary_img">
+        </div>
+        <div class="col-sm-7 col-sm-offset-0 col-md-7 col-md-offset-1">
+          <div class="text">
+            <h2>Men vi behöll djuren som boskap</h2>
+            <p>Vi blev bofasta och kunde ordna tillvaron på ett effektivare sätt, men vi behöll djuren som boskap. Vi gjorde dom tama och fortsatte att äta dom. <a href="http://www.so-rummet.se/kategorier/historia/manniskans-forhistoria-och-stenaldern#" target="_blank" class="source light"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del7">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text text-center">
+            <h2><span class="lg"><span class="counter">90</span>%</span> av alla svenskar äter kött idag <a href="http://www.djurensratt.se/om-djurens-ratt/nyheter/var-tionde-svensk-ar-vegetarian" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></h2>
+            <p>Med en så stor efterfrågan... hur ser industrin ut?</p>
+          </div>
+        </div>
+        <img src="assets/img/ordering.svg" class="primary_img">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del8">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text text-center">
+            <h2>Vi slaktar cirka<span class="lg"><span class="counter">90</span> miljoner</span> djur i Sverige varje år</h2>
+            <p class="source dark_underline">Jordbruksverkets statistikdatabas 2013</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content chicken" style="height: 96%;"><img src="assets/img/icon_chicken.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">83,265,440</span>
+              <span class="animal">Kycklingar</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content pig" style="height: 3%;"><img src="assets/img/icon_pig.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">2,550,710</span>
+              <span class="animal">Grisar</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content cow" style="height: 0.5%;"><img src="assets/img/icon_cow.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">417,390</span>
+              <span class="animal">Nötdjur</span>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="stat">
+              <div class="content lamb" style="height: 0.3%;"><img src="assets/img/icon_lamb.svg"></div>
+            </div>
+            <div class="numbers">
+              <span class="counter">252,880</span>
+              <span class="animal">Får & lamm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="del9">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_cow.svg" alt="Ko illustration" class="primary_img showMobile">
+            <h2>First up, kossan</h2>
+            <p>Hon kallas även för nötdjur. Ordet nöt kommer från det forngermanska ordet ‘nauta’, vilket betyder egendom. <a href="http://g3.spraakdata.gu.se/saob/show.phtml?filenr=1/170/216.html" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <p>Deras kött kommer att användas för att tillverka hamburgare, filéer och kalvkotletter.</p> 
+            <p>Förutom det så insemineras kor med sperma för att föda kalvar. På så sätt kan de fortsätta producera mjölk. Mjölken används sedan för att producera mejeriprodukter.</p>
+            <hr>
+            <p>Kalven slaktas efter <strong>18 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_cow.svg" alt="Ko illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_lamb.svg" alt="Lamm illustration" class="primary_img showMobile">
+            <h2>Lammen</h2>
+            <p>Lammen behöver klippas varje år på grund av den extrema pälstillväxten. </p>
+            <p>Anledningen till att ullen växer så fort beror på att vi människor har avlat fram lammen till att göra det.</p>
+            <hr>
+            <p>Slaktas efter <strong>6 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/far-och-lamm" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_lamb.svg" alt="Lamm illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del11">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_pig.svg" alt="Gris illustration" class="primary_img showMobile">
+            <h2>Grisen</h2>
+            <p>Den här krabaten har fått svansen avbiten, blivit kastrerad utan bedövning och lider av magsår. Grisen kommer bland annat att användas för bacon och fläsk, men också för gelatin, en vanlig tillsats i en del godisar, glassar och kosmetika.</p> 
+            <p>Han är ganska lik oss, precis som människan så är han allätare.</p>
+            <hr>
+            <p>Slaktas efter <strong>6 månader</strong> <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/grisar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_pig.svg" alt="Gris illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="del12">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-lg-4">
+          <div class="text">
+            <img src="assets/img/profile_chicken.svg" alt="Kyckling illustration" class="primary_img showMobile">
+            <h2>Kycklingen</h2>
+            <p>Kycklingar kläcks i maskiner och får därför aldrig träffa sin mamma. Den här kycklingen delar boende tillsammans med några tusen andra kycklingar. <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <hr>
+            <p>Slaktas efter <strong>5 veckor</strong>. Hankycklingar inom äggindustrin slaktas däremot <strong>direkt</strong> efter födseln <a href="http://sverigesradio.se/sida/artikel.aspx?programid=97&artikel=2761983" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 text-center">
+          <img src="assets/img/profile_chicken.svg" alt="Kyckling illustration" class="primary_img hideMobile">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del13">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text text-center">
+            <img src="assets/img/rabbit.svg" alt="Kanin illustration" class="primary_img">
+            <h2>Andra djur i maten</h2>
+            <p>Kaniner, renar, hästar, ankor, strutsar, getter, gäss och kalkoner.<br/> 
+            De används alla inom svensk livsmedelsindustri. 
+            <a href="http://www.djurensratt.se/vara-fragor/djur-i-livsmedelsindustrin/kor-kalvar-tjurar" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <img src="assets/img/other_animals.svg" alt="Kyckling illustration" class="secondary_img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="del14">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="mobile">
+            <div class="safari">
+              <div class="page1">
+                <img src="assets/img/mobile_svt.svg" alt="Svt">
+                <content>
+                <div class="img"><img src="assets/img/icon_cow.svg"></div>
+                <h4>Anmälningar om plågade slaktdjur ökar</h4>
+                <p><a href="http://www.svt.se/nyheter/regionalt/smalandsnytt/anmalningarna-for-plagade-slaktdjur-okar" target="_blank">Läs mer på SVT.se</a></p>
+                </content>
+              </div>
+              <div class="page2">
+                <img src="assets/img/mobile_dn.svg" alt="Svt">
+                <content>
+                <div class="img"><img src="assets/img/icon_chicken.svg"></div>
+                <h4>Tusentals kycklingar dog av värmen</h4>
+                <p><a href="http://www.dn.se/nyheter/sverige/tusentals-kycklingar-dog-av-varmen/" target="_blank">Läs mer på DN.se</a></p>
+                </content>
+              </div>
+            </div>
+            <img src="assets/img/mobile.svg" alt="Mobil illustration" class="primary_img">
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="text">
+            <h2>De är alla svenska djur</h2>
+            <p>Sverige ligger i framkant. Men världens bästa djurskydd har vi inte. På nyheterna går det att läsa om hur de missköts och utnyttjas år efter år. <a href="http://www.svd.se/opinion/brannpunkt/nej-sverige-har-inte-varldens-basta-djurskydd_4097257.svd" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+            <p>I den svenska filmen <a href="http://www.ettlivsomgris.se/" target="_blank" title="Ett liv som gris">Ett liv som gris</a> får vi se exempel på hur grisar har det. Och på <a href="http://www.wallsofglass.se/" target="_blank" title="Walls of Glass Sverige">Walls of glass</a> får vi se foton inifrån svenska slakterier.</p>
+            <p>På <a href="http://mjolken.se" target="_blank" title="Mjölken.se">Mjölken.se</a> berättar vi om den svenska mjölkindustrin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="del15">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text">
+            <h2>Det påverkar vårt hem, Jorden</h2>
+            <p>Den globala kött- och mejeriindustrin står för <strong>70%</strong> av den globala sötvattenskonsumtionen, <strong>38%</strong> av den totala landanvändningen och <strong>19%</strong> av världens växthusgasutsläpp.</p>
+            <p>I en rapport från 2010 rekommenderar FN en minskad kött- och mejerikonsumtion. <a href="http://www.theguardian.com/environment/2010/jun/02/un-report-meat-free-diet" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-sm-6 text-center">
+          <div class="stats">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="stat">
+                  <div class="content greenhouse_gas_emissions" style="height: 19%;"><div class="numbers"><span class="counter">19</span>%</div></div>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="stat">
+                  <div class="content land_use" style="height: 38%;"><div class="numbers"><span class="counter">38</span>%</div></div>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="stat">
+                  <div class="content water_use" style="height: 70%;"><div class="numbers"><span class="counter">70</span>%</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="source light_underline">FN-rapport 2010</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del16">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text">
+            <h2>Dessutom går <span class="counter">90%</span> av biomassan förlorad genom djuren</h2>
+            <p>För varje steg i näringspyramiden så går energi förlorad. Det beror på att djuren förbrukar upp biomassan för att producera värme åt sig själv bland annat. </p>
+            <p>Näringskedjor har vanligtvis endast tre eller fyra nivåer på grund av detta. <a href="http://publications.lib.chalmers.se/records/fulltext/72641.pdf" target="_blank" class="source dark"><span class="glyphicon glyphicon-share-alt"></span> Källa</a></p>
+          </div>
+        </div>
+        <div class="col-sm-6 text-center">
+          <img src="assets/img/gear.svg" class="gear1">
+          <img src="assets/img/gear.svg" class="gear2">
+          <img src="assets/img/nutrition_pyramid.svg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="del17">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="butcher">
+            <img src="assets/img/lamp_on.svg" class="lamp_on">
+            <img src="assets/img/lamp_off.svg" class="lamp_off">
+            <img src="assets/img/butcher_light.svg" class="butcher_light">
+            <img src="assets/img/butcher_dark.svg" class="butcher_dark">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="text">
+            <h2>Dags för den läskiga biten, slakten</h2>
+            <p>Eftersom vi inte vill skrämma dig så har vi valt att tona ner illustrationerna en aning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+
