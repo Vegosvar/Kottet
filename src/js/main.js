@@ -35,52 +35,6 @@ $(function () {
     $('.orange_eaten').removeClass('show')
     $('.orange_gone').addClass('show')
   })
-
-  var number_regex = new RegExp(/,/g)
-
-  var sanitize_number = function (number) {
-    return parseInt(number.replace(number_regex, ''))
-  }
-
-  var create_bar = function (number_identifier, bar_identifier, count_percentage) {
-    var initial_value = $(number_identifier).text()
-    var previous_value
-    var triggered = false
-
-    setInterval(function () {
-      if (initial_value === '0') {
-        initial_value = $(number_identifier).text()
-      }
-
-      var value = $(number_identifier).text()
-
-      if (value === initial_value && !triggered) {
-        return
-      }
-
-      triggered = true
-
-      var percentage
-
-      if (count_percentage) {
-        percentage = Math.round((sanitize_number(value) / sanitize_number(initial_value)) * 100) * (parseFloat($(bar_identifier).attr('data-percentage')) / 100)
-      }
-
-      if (previous_value !== value) {
-        previous_value = value
-        $(bar_identifier).css('height', (count_percentage ? percentage : value) + '%')
-      }
-    }, 100)
-  }
-
-  create_bar('.greenhouse_gas_emissions .numbers .counter', '.greenhouse_gas_emissions')
-  create_bar('.land_use .numbers .counter', '.land_use')
-  create_bar('.water_use .numbers .counter', '.water_use')
-
-  create_bar('.chicken .numbers .counter', '.chicken .stat .content', true)
-  create_bar('.pig .numbers .counter', '.pig .stat .content', true)
-  create_bar('.cow .numbers .counter', '.cow .stat .content', true)
-  create_bar('.lamb .numbers .counter', '.lamb .stat .content', true)
 })
 
 /*
