@@ -2,6 +2,8 @@ var gulp = require('gulp')
 var plugins = require('gulp-load-plugins')()
 var del = require('del')
 var run_sequence = require('run-sequence')
+var less_plugin_auto_prefix = require('less-plugin-autoprefix')
+var autoprefix = new less_plugin_auto_prefix({ browsers: ["last 2 versions"] })
 
 var sequence_error = function (callback, error) {
   if (error) {
@@ -76,7 +78,9 @@ gulp.task('vendor', function () {
 
 gulp.task('less', function () {
   return gulp.src(paths.less)
-        .pipe(plugins.less())
+        .pipe(plugins.less({ 
+          plugins: [autoprefix]
+        }))
         .pipe(gulp.dest('dist/assets/css'))
 })
 
