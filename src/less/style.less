@@ -89,7 +89,7 @@ img {
   font-weight: 300;
   &.light {
     border: 1px solid #ccc;
-    color: #ccc;
+    color: #999;
     padding: 1px 8px 2px 8px;
     font-size: 9pt;
     border-radius: 15px;
@@ -986,7 +986,7 @@ header {
     @media (max-width: 768px) {
       margin-top: 0;
     }
-    .counter {
+    .procent {
       color: #29B473;
     }
   }
@@ -1008,12 +1008,12 @@ header {
 
 
 
-/***************** DEL 16 - Slakten ******************/
+/***************** DEL 17 - Slakten ******************/
 
 @keyframes lamp_on { 
   0% { transform:rotate(-2deg); opacity: 0; } 
   50% { transform:rotate(2deg); } 
-  90% { opacity: 0; }  
+  87% { opacity: 0; }  
   93% { opacity: 1; } 
   97% { opacity: 1; } 
   100% { transform:rotate(-2deg); opacity: 0; } 
@@ -1022,7 +1022,7 @@ header {
 @keyframes lamp_off { 
   0% { transform:rotate(-2deg); opacity: 1; } 
   50% { transform:rotate(2deg); } 
-  90% { opacity: 1; }  
+  87% { opacity: 1; }  
   93% { opacity: 0; } 
   97% { opacity: 0; } 
   100% { transform:rotate(-2deg); opacity: 1; } 
@@ -1030,7 +1030,7 @@ header {
 
 @keyframes butcher_light { 
   0% { opacity: 0.2; } 
-  90% { opacity: 0.2; } 
+  87% { opacity: 0.2; } 
   93% { opacity: 1; } 
   97% { opacity: 1; } 
   100% { opacity: 0.2; }
@@ -1038,7 +1038,7 @@ header {
 
 @keyframes butcher_dark { 
   0% { opacity: 0.8; } 
-  90% { opacity: 0.8; } 
+  87% { opacity: 0.8; } 
   93% { opacity: 0; } 
   97% { opacity: 0; } 
   100% { opacity: 0.8; } 
@@ -1047,11 +1047,12 @@ header {
 .del17 {
   color: #fff;
   background: #31313A;
-  @media (max-width: 768px) { 
-    padding: 60px 0;
-  }
   .text {
+    margin-top: 60px;
     padding: 100px 0 100px 0;
+    @media (max-width: 768px) { 
+      padding: 0 0 60px 0;
+    }
   }
   .butcher{
     padding: 60px 0;
@@ -1061,22 +1062,22 @@ header {
       transform-origin: 0% 0%;
       position: absolute;
       left: 90%;
-      top: -10px;
-      animation: lamp_on 3s infinite;
+      top: -50px;
+      animation: lamp_on 2s infinite;
     }
     .lamp_off {
       transform-origin: 0% 0%;
       position: absolute;
       left: 90%;
-      top: -10px;
-      animation: lamp_off 3s infinite;
+      top: -50px;
+      animation: lamp_off 2s infinite;
     }
     .butcher_light {
       position: absolute;
       opacity: 1;
       width: 100%;
       padding: 0 10%;
-      animation: butcher_light 3s infinite;
+      animation: butcher_light 2s infinite;
     }
     .butcher_dark {
       opacity: 0;
@@ -1084,7 +1085,66 @@ header {
       top: 0;
       width: 100%;
       padding: 0 10%;
-      animation: butcher_dark 3s infinite;
+      animation: butcher_dark 2s infinite;
     }
   }
 }
+
+
+/***************** DEL 18 - Bedövning ******************/
+
+.del18 {
+  color: #333;
+  background: #eee;
+  .text {
+    padding: 100px 0;
+    @media (max-width: 768px) {
+      padding: 60px 0;
+    }
+  }
+}
+
+
+
+
+/***************** DEL 18 - Bedövning ******************/
+
+@keyframes steam { 
+  0% { opacity: 0; top: -5%; }
+  60% { opacity: 0.5; }
+  100% { opacity: 0; top: -30%; }
+}
+
+.del19 {
+  color: #333;
+  background: #eee;
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+  .text {
+    margin-bottom: 30px;
+  }
+  .gasing {
+    position: relative;
+    .gas {
+      width: 100%;
+    }
+    .steam {
+      position: absolute;
+      left: 12%;
+      top: -5%;
+      width: 2%;
+      &.one {
+        transform: rotate(180deg);
+        animation: steam 2s linear infinite;
+      }
+      &.two {
+        animation: steam 3.1s linear infinite;
+      }
+      &.three {
+        animation: steam 2.4s linear infinite;
+      }
+    }
+  }
+}
+
