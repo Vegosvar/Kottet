@@ -177,29 +177,23 @@ gulp.task('prod', function (callback) {
   })
 })
 
-gulp.task('deploy', function (callback) {
-  run_sequence('prod', function (error) {
-    if (error) {
-      return sequence_error(callback, error)
+gulp.task('deploy', ['prod'], function (callback) {
+  var options = {
+    dotfiles: true,
+    silent: true
+  }
+
+  if (process.env.TRAVIS) {
+    options.user = {
+      name: process.env.GIT_NAME,
+      email: process.env.GIT_EMAIL
     }
 
-    var options = {
-      dotfiles: true,
-      silent: true
-    }
+    options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
+  }
 
-    if (process.env.TRAVIS) {
-      options.user = {
-        name: process.env.GIT_NAME,
-        email: process.env.GIT_EMAIL
-      }
-
-      options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
-    }
-
-    require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
-      options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
-      ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
-    })
+  require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
+    options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
+    ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
   })
 })
