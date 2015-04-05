@@ -111,7 +111,7 @@ gulp.task('connect', function () {
 })
 
 gulp.task('default', function (callback) {
-  return run_sequence(Object.keys(paths), 'connect', 'watch', function (error) {
+  return run_sequence('clean', 'install', 'lint', Object.keys(paths), 'connect', 'watch', function (error) {
     sequence_error(callback, error)
   })
 })
