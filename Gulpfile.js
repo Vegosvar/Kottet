@@ -3,7 +3,8 @@ var plugins = require('gulp-load-plugins')()
 var del = require('del')
 var run_sequence = require('run-sequence')
 var less_plugin_auto_prefix = require('less-plugin-autoprefix')
-var autoprefix = new less_plugin_auto_prefix({ browsers: ["last 2 versions"] })
+var autoprefix = new less_plugin_auto_prefix({ browsers: ['last 2 versions'] })
+var ghpages = require('gh-pages')
 
 var sequence_error = function (callback, error) {
   if (error) {
@@ -117,5 +118,23 @@ gulp.task('connect', function () {
 gulp.task('default', function (callback) {
   return run_sequence('clean', 'install', 'lint', Object.keys(paths), 'connect', 'watch', function (error) {
     sequence_error(callback, error)
+  })
+})
+
+gulp.task('deploy', ['build'], function (callback) {
+  var options = { 
+    dotfiles: true
+  }
+ 
+  if (process.env.TRAVIS) {
+    options.user = {
+      name: process.env.GIT_USER,
+      email: process.env.GIT_EMAIL
+    }
+  }
+
+  require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
+    options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
+    ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
   })
 })
