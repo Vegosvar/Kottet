@@ -41,6 +41,22 @@ h2 {
   line-height: 1.2;
 }
 
+a {
+  color: inherit;
+  font-weight: 700;
+  opacity: 1;
+  .transition(opacity, 0.1s, ease-in);
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+  }
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 p {
   font-size: 13pt;
   line-height: 1.6;
@@ -96,8 +112,13 @@ img {
       text-decoration: none;
     }
   }
-  &.underline {
+  &.dark_underline {
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 3px;
+    font-size: 10pt;
+  }
+  &.light_underline {
+    border-bottom: 1px solid rgba(250,250,250,0.2);
     padding-bottom: 3px;
     font-size: 10pt;
   }
@@ -754,6 +775,23 @@ header {
 
 /***************** DEL 14 - Svenska djur ******************/
 
+
+@keyframes page_one { 
+  0% { top: -500px;} 
+  47% { top: -500px;} 
+  53% { top: 0; } 
+  94% { top: 0; } 
+  100% { top: -500px;} 
+}
+
+@keyframes page_two { 
+  0% { top: 0;} 
+  47% { top: 0;} 
+  53% { top: 500px; } 
+  94% { top: 500px; } 
+  100% { top: 0;} 
+}
+
 .del14 {
   padding: 100px 0 0 0;
   color: #fff;
@@ -767,6 +805,10 @@ header {
   .mobile {
     position: relative;
     width: 100%;
+    @media (max-width: 768px) { 
+      margin-bottom: 30px;
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+    }
     .safari {
       position: absolute;
       top: 5.4%;
@@ -779,31 +821,187 @@ header {
       img {
         width: 100%;
       }
+      .page1 {
+        position: absolute;
+        animation: page_one 10s infinite;
+        .img {
+          background: #965a42;
+          img {
+            padding: 5px 15px;
+            @media (max-width: 768px) { 
+              height: 60px;
+            }
+          }
+        }
+      }
+      .page2{
+        position: absolute;
+        animation: page_two 10s infinite;
+        .img {
+          background: #ffdd81;
+          img {
+            padding: 5px 50px;
+            @media (max-width: 768px) { 
+              height: 60px;
+            }
+          }
+        }
+      }
       content {
         display: block;
         padding: 10px;
         .img {
           border-radius: 3px;
-          width: 100%;
-          background: #965a42;
           margin-bottom: 10px;
-          img {
-            padding: 5px 15px;
-          }
+        }
+        a {
+          font-weight: 300;
+          color: @brand-color;
         }
         h4 {
-          font-size: 11pt;
+          font-size: 20pt;
           font-weight: 700;
-          line-height: 1.3;
+          line-height: 1.2;
           color: #333;
-          display: inline;
+          margin-top: 0;
+          margin-bottom: 5px;
+          @media (max-width: 1200px) { 
+            font-size: 15pt;
+            line-height: 1.3;
+          }
+          @media (max-width: 992px) { 
+            font-size: 11pt;
+            line-height: 1.3;
+          }
+          @media (max-width: 768px) { 
+            font-size: 10pt;
+          }
         }
-        .date {
-          font-size: 8pt;
-          color: #333;
+        p {
+          font-size: 9pt;
         }
       }
     }
   }
 }
 
+
+
+
+/***************** DEL 15 - Klimatpåverkan ******************/
+
+.del15 {
+  padding: 100px 0 60px 0;
+  color: #fff;
+  background: #0A0E17;
+  @media (max-width: 768px) { 
+    padding: 60px 0;
+  }
+  .primary_img {
+    width: 50%;
+  }
+  .text {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    } 
+  }
+  .stats { 
+    margin-bottom: 15px;
+    .stat {
+      position: relative;
+      display: inline-block;
+      height: 400px;
+      width: 30%;
+      background: #333;
+      border-radius: 3px;
+      @media (max-width: 768px) { 
+        width: 100%;
+      }
+      .content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0 0 3px 3px;
+        &.greenhouse_gas_emissions {
+          background: #58595B url(../img/gas_bg.svg) center center;
+          background-size: cover;
+          .numbers {
+            color: #999;
+          }
+        }
+        &.land_use {
+          background: #75D1EA url(../img/farm_bg.svg) center center;
+          background-size: cover;
+          .numbers {
+            color: #75D1EA;
+          }
+        }
+        &.water_use {
+          background: #2684C4 url(../img/water_bg.svg) center center;
+          background-size: cover;
+          .numbers {
+            color: #2684C4;
+          }
+        }
+      }
+    }
+    .numbers {
+      position: relative;
+      top: -30px; 
+      font-size: 13pt;
+      font-weight: 700;
+      @media (max-width: 768px) {
+        font-size: 11pt; 
+      }
+    }
+  }
+}
+
+
+
+
+/***************** DEL 16 - Bioomassa ******************/
+
+
+@keyframes left_gear { 
+  100% { transform:rotate(360deg); } 
+}
+
+@keyframes right_gear { 
+  100% { transform:rotate(-360deg); } 
+}
+
+.del16 {
+  padding: 100px 0 100px 0;
+  color: #fff;
+  background: #1D2822;
+  @media (max-width: 768px) { 
+    padding: 60px 0;
+  }
+  .text {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+    .counter {
+      color: #29B473;
+    }
+  }
+  .gear1 {
+    position: absolute;
+    top: 66%;
+    left: 47%;
+    width: 7%;
+    animation: left_gear 1.5s infinite;
+  }
+  .gear2 {
+    position: absolute;
+    top: 63%;
+    left: 53%;
+    width: 5%;
+    animation: right_gear 1.5s infinite;
+  }
+}
