@@ -135,8 +135,8 @@ gulp.task('default-svg', function (callback) {
   })
 })
 
-gulp.task('deploy', function () {
-  return run_sequence('build', 'svg2png', function (error) {
+gulp.task('deploy', function (callback) {
+  run_sequence('build', 'svg2png', function (error) {
     if (error) {
       return sequence_error(callback, error)
     }
