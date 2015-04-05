@@ -41,6 +41,7 @@ h2 {
   line-height: 1.2;
 }
 
+
 a {
   color: inherit;
   font-weight: 700;
@@ -1101,13 +1102,95 @@ header {
     @media (max-width: 768px) {
       padding: 60px 0;
     }
+    hr {
+      border-top: 2px solid rgba(0,0,0,0.1);
+    }
   }
 }
 
 
 
 
-/***************** DEL 18 - Bedövning ******************/
+/***************** DEL 19 - Elbedövning ******************/
+
+@keyframes lightning { 
+  0% { opacity: 0;}
+  90% { opacity: 0;}
+  91% { opacity: 1;}
+  100% { opacity: 1;}
+}
+
+@keyframes bubble_one { 
+  0% { opacity: 0; top: 75%; left: 46%;}
+  50% { opacity: 1;}
+  100% { opacity: 0; top: 50%; left: 42%;}
+}
+
+@keyframes bubble_two { 
+  0% { opacity: 0; top: 75%; left: 46%;}
+  50% { opacity: 1;}
+  100% { opacity: 0; top: 60%; left: 42%;}
+}
+
+.del19 {
+  color: #333;
+  background: #eee;
+  padding-bottom: 60px;
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+  .text {
+    margin-bottom: 30px;
+  }
+  .drowning {
+    position: relative;
+    .primary_img {
+      width: 100%;
+    }
+    .bubble {
+      border-radius: 50px;
+      position: absolute;
+      background: rgba(250,250,250,0.9);
+      &.one {
+        top: 75%; 
+        left: 46%;
+        width: 10px;
+        height: 10px;
+        animation: bubble_one 4s linear infinite;
+      }
+      &.two {
+        top: 60%;
+        left: 43%;
+        width: 6px;
+        height: 6px;
+        animation: bubble_two 3s linear infinite;
+      }
+    }
+    .lightning {
+      position: absolute;
+      width: 4%;
+      &.one {
+        left: 8%;
+        top: 30%;
+        transform: rotate(180deg);
+        animation: lightning 2s linear infinite;
+      }
+      &.two {
+        left: 11%;
+        top: 28%;
+        animation: lightning 3.1s linear infinite;
+      }
+      &.three {
+        left: 10%;
+        top: 53%;
+        animation: lightning 2.4s linear infinite;
+      }
+    }
+  }
+}
+
+
+/***************** DEL 20 - Gas ******************/
 
 @keyframes steam { 
   0% { opacity: 0; top: -5%; }
@@ -1115,18 +1198,19 @@ header {
   100% { opacity: 0; top: -30%; }
 }
 
-.del19 {
+.del20 {
   color: #333;
   background: #eee;
+  padding-bottom: 60px;
   @media (max-width: 768px) {
     padding: 60px 0;
   }
   .text {
     margin-bottom: 30px;
   }
-  .gasing {
+  .gas {
     position: relative;
-    .gas {
+    .primary_img {
       width: 100%;
     }
     .steam {
