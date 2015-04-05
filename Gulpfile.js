@@ -5,6 +5,7 @@ var run_sequence = require('run-sequence')
 var less_plugin_auto_prefix = require('less-plugin-autoprefix')
 var autoprefix = new less_plugin_auto_prefix({ browsers: ['last 2 versions'] })
 var ghpages = require('gh-pages')
+var util = require('util')
 
 var sequence_error = function (callback, error) {
   if (error) {
@@ -128,9 +129,11 @@ gulp.task('deploy', ['build'], function (callback) {
  
   if (process.env.TRAVIS) {
     options.user = {
-      name: process.env.GIT_USER,
+      name: process.env.GIT_NAME,
       email: process.env.GIT_EMAIL
     }
+
+    options.repo = util.format('https://%:%@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
   }
 
   require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
