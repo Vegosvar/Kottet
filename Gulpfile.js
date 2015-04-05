@@ -36,7 +36,7 @@ var paths = {
   ],
 
   images: [
-    'src/img/**'
+    'src/img/**/*.svg'
   ],
 
   misc: [
@@ -80,7 +80,7 @@ gulp.task('vendor', function () {
 
 gulp.task('less', function () {
   return gulp.src(paths.less)
-        .pipe(plugins.less({ 
+        .pipe(plugins.less({
           plugins: [autoprefix]
         }))
         .pipe(plugins.minifyCss())
@@ -94,6 +94,12 @@ gulp.task('html', function () {
 
 gulp.task('images', function () {
   return gulp.src(paths.images)
+        .pipe(gulp.dest('dist/assets/img'))
+})
+
+gulp.task('svg2png', function () {
+  return gulp.src(paths.images)
+        .pipe(plugins.svg2png())
         .pipe(gulp.dest('dist/assets/img'))
 })
 
@@ -118,28 +124,40 @@ gulp.task('connect', function () {
 })
 
 gulp.task('default', function (callback) {
-  return run_sequence('clean', 'install', 'lint', Object.keys(paths), 'connect', 'watch', function (error) {
+  return run_sequence('build', 'connect', 'watch', function (error) {
     sequence_error(callback, error)
   })
 })
 
-gulp.task('deploy', ['build'], function (callback) {
-  var options = { 
-    dotfiles: true,
-    silent: true
-  }
- 
-  if (process.env.TRAVIS) {
-    options.user = {
-      name: process.env.GIT_NAME,
-      email: process.env.GIT_EMAIL
+gulp.task('default-svg', function (callback) {
+  return run_sequence('build', 'svg2png', 'connect', 'watch', function (error) {
+    sequence_error(callback, error)
+  })
+})
+
+gulp.task('deploy', function () {
+  return run_sequence('build', 'svg2png', function (error) {
+    if (error) {
+      return sequence_error(callback, error)
     }
 
-    options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
-  }
+    var options = {
+      dotfiles: true,
+      silent: true
+    }
 
-  require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
-    options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
-    ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
+    if (process.env.TRAVIS) {
+      options.user = {
+        name: process.env.GIT_NAME,
+        email: process.env.GIT_EMAIL
+      }
+
+      options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
+    }
+
+    require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
+      options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
+      ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
+    })
   })
 })

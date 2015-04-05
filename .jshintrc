@@ -9,5 +9,9 @@
   "jquery": true,
   "mocha": true,
   "trailing": true,
-  "noempty": true
+  "noempty": true,
+  "predef": [
+    "navigator",
+    "Modernizr"
+  ]
 }
