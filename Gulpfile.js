@@ -125,7 +125,8 @@ gulp.task('default', function (callback) {
 
 gulp.task('deploy', ['build'], function (callback) {
   var options = { 
-    dotfiles: true
+    dotfiles: true,
+    silent: true
   }
  
   if (process.env.TRAVIS) {
@@ -134,7 +135,7 @@ gulp.task('deploy', ['build'], function (callback) {
       email: process.env.GIT_EMAIL
     }
 
-    options.repo = util.format('https://%:%@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
+    options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
   }
 
   require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
