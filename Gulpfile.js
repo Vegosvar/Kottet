@@ -41,11 +41,17 @@ var paths = {
 
   misc: [
     'src/misc/**'
-  ]
+  ],
 }
 
+gulp.task('pre-build', function (callback) {
+  return run_sequence('clean', 'install', 'lint', function (error) {
+    sequence_error(callback, error)
+  })
+})
+
 gulp.task('build', function (callback) {
-  return run_sequence('clean', 'install', 'lint', Object.keys(paths), function (error) {
+  return run_sequence(Object.keys(paths), function (error) {
     sequence_error(callback, error)
   })
 })
@@ -67,9 +73,18 @@ gulp.task('lint', function () {
         .pipe(plugins.jscs())
 })
 
+var set_png = false
+
+gulp.task('set-png', function () {
+  return set_png = true
+})
+
 gulp.task('js', function () {
   return gulp.src(paths.js)
+        .pipe(plugins.sourcemaps.init())
+        .pipe(set_png ? plugins.replace('var isIe = false', 'var isIe = true') : plugins.util.noop())
         .pipe(plugins.uglify())
+        .pipe(plugins.sourcemaps.write('maps'))
         .pipe(gulp.dest('dist/assets/js'))
 })
 
@@ -87,8 +102,29 @@ gulp.task('less', function () {
         .pipe(gulp.dest('dist/assets/css'))
 })
 
+var favicon_html
+
+gulp.task('favicon', function (callback) {
+  return gulp.src('src/favicon/favicon.png')
+  .pipe(plugins.favicons({
+    files: {
+      iconsPath: '/assets/favicon'
+    },
+    settings: {
+      vinylMode: true,
+      background: '#eee',
+      appName: 'Köttet'
+    }
+  }, function (code) {
+    favicon_html = code.split('\n').join('\n  ')
+    callback()
+  }))
+  .pipe(gulp.dest('dist/assets/favicon'))
+})
+
 gulp.task('html', function () {
   return gulp.src(paths.html)
+        .pipe(favicon_html ? plugins.replace('<!-- favicons -->', favicon_html) : plugins.util.noop())
         .pipe(gulp.dest('dist'))
 })
 
@@ -124,19 +160,25 @@ gulp.task('connect', function () {
 })
 
 gulp.task('default', function (callback) {
-  return run_sequence('build', 'connect', 'watch', function (error) {
+  return run_sequence('pre-build', 'build', 'connect', 'watch', function (error) {
     sequence_error(callback, error)
   })
 })
 
-gulp.task('default-svg', function (callback) {
-  return run_sequence('build', 'svg2png', 'connect', 'watch', function (error) {
+gulp.task('png', function (callback) {
+  return run_sequence('set-png', 'pre-build', 'build', 'svg2png', 'connect', 'watch', function (error) {
+    sequence_error(callback, error)
+  })
+})
+
+gulp.task('prod', function (callback) {
+  return run_sequence('pre-build', 'favicon', 'build', 'svg2png', function (error) {
     sequence_error(callback, error)
   })
 })
 
 gulp.task('deploy', function (callback) {
-  run_sequence('build', 'svg2png', function (error) {
+  run_sequence('prod', function (error) {
     if (error) {
       return sequence_error(callback, error)
     }
