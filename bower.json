@@ -1,6 +1,7 @@
 {
   "name": "Kottet",
   "version": "0.0.1",
+  "private": true,
   "dependencies": {
     "counter-up": "~1.0.0"
   }

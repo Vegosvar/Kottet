@@ -1,0 +1,13 @@
+{
+  "asi": true,
+  "undef": true,
+  "quotmark": "single",
+  "latedef": false,
+  "curly": true,
+  "eqeqeq": true,
+  "unused": "vars",
+  "jquery": true,
+  "mocha": true,
+  "trailing": true,
+  "noempty": true
+}
