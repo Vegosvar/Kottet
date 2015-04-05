@@ -10,6 +10,7 @@
   "mocha": true,
   "trailing": true,
   "noempty": true,
+  "browser": true,
   "predef": [
     "navigator",
     "Modernizr"
