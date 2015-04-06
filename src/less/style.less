@@ -45,12 +45,10 @@ h2 {
 a {
   color: inherit;
   font-weight: 700;
-  opacity: 1;
   .transition(opacity, 0.1s, ease-in);
   &:hover {
     text-decoration: none;
     color: inherit;
-    opacity: 0.8;
   }
   &:focus {
     text-decoration: none;
@@ -565,7 +563,7 @@ header {
         display: block;
         margin-bottom: 10px;
         @media (max-width: 768px) { 
-          font-size: 50pt;
+          font-size: 35pt;
           line-height: 1.1;
         }
       }
@@ -606,7 +604,7 @@ header {
     .numbers {
       font-size: 17pt;
       @media (max-width: 768px) {
-        font-size: 11pt; 
+        font-size: 8pt; 
       }
       .counter {
         font-weight: 700;
@@ -616,7 +614,7 @@ header {
         display: block;
         font-size: 13pt;
         @media (max-width: 768px) {
-          font-size: 10pt; 
+          font-size: 7pt; 
         }
       }
     }
@@ -844,6 +842,7 @@ header {
             padding: 5px 50px;
             @media (max-width: 768px) { 
               height: 60px;
+              padding: 5px 0;
             }
           }
         }
@@ -1300,5 +1299,49 @@ header {
     margin-bottom: 60px;
     background: url("../img/hanging_pig.svg");
     animation: hanging_pig 1s  infinite;
+  }
+}
+
+
+
+
+/***************** DEL 24 - Finns det andra alternativ? ******************/
+
+.del24 {
+  color: #65b459;
+  background: #F7F7F7;
+  padding: 120px 0;
+}
+
+
+/***************** DEL 25 - Du har makten ******************/
+
+.del25 {
+  color: #fff;
+  background: #65b459;
+  padding: 120px 0;
+  .text {
+    margin-bottom: 30px;
+  }
+  .btn {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-size: 13pt;
+    padding: 10px 20px;
+    margin: 0 5px;
+    .transition(transform, 0.1s, ease-in);
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.btn-primary {
+      background: #fff;
+      color: #65b459;
+    }
+    &.btn-secondary {
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+    }
   }
 }
