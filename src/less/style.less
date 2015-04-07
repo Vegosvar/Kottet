@@ -1314,12 +1314,54 @@ header {
 }
 
 
-/***************** DEL 25 - Du har makten ******************/
+
+
+/***************** DEL 25 - Rösta ******************/
 
 .del25 {
   color: #fff;
   background: #65b459;
-  padding: 120px 0;
+  padding: 60px 0 0 0;
+  .text {
+    margin-bottom: 30px;
+    border: 2px solid rgba(250,250,250,0.2);
+    padding: 30px;
+    border-radius: 20px;
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+  .btn {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-size: 13pt;
+    padding: 10px 20px;
+    margin: 0 5px;
+    .transition(transform, 0.1s, ease-in);
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.btn-primary {
+      background: #fff;
+      color: #65b459;
+    }
+    &.btn-secondary {
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+}
+
+
+
+/***************** DEL 26 - Du har makten ******************/
+
+.del26 {
+  color: #fff;
+  background: #65b459;
+  padding: 60px 0 180px 0;
   .text {
     margin-bottom: 30px;
   }
