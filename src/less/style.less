@@ -31,6 +31,7 @@ body {
   background: #f6f6f6;
   -webkit-font-smoothing: antialiased;
   font-family: @brand-font;
+  font-weight: 400;
 }
 
 h2 {
@@ -66,6 +67,7 @@ p {
   font-size: 22px;
   line-height: 1.3;
   margin-bottom: 15px;
+  font-weight: 400;
 }
 
 strong {
@@ -194,6 +196,7 @@ header {
           font-size: 15px;
           padding: 15px 20px;
           display: inline-block;
+          font-weight: 400;
           &:hover {
             text-decoration: none;
             color: @brand-color;
@@ -855,16 +858,20 @@ header {
           margin-bottom: 10px;
         }
         a {
-          font-weight: 300;
+          font-weight: 400;
           color: @brand-color;
         }
         h4 {
           font-size: 20pt;
           font-weight: 700;
-          line-height: 1.2;
+          line-height: 1.15;
           color: #333;
           margin-top: 0;
           margin-bottom: 5px;
+           a {
+            color: #333;
+            font-weight: 700;
+          }
           @media (max-width: 1200px) { 
             font-size: 15pt;
             line-height: 1.3;
@@ -1298,7 +1305,7 @@ header {
     overflow: hidden;
     margin-bottom: 60px;
     background: url("../img/hanging_pig.svg");
-    animation: hanging_pig 2s  infinite;
+    animation: hanging_pig 2s infinite;
   }
 }
 
@@ -1311,6 +1318,9 @@ header {
   color: #65b459;
   background: #F7F7F7;
   padding: 120px 0;
+  img {
+    margin-bottom: 5px;
+  }
 }
 
 
@@ -1319,12 +1329,10 @@ header {
 /***************** DEL 25 - Rösta ******************/
 
 .del25 {
-  color: #fff;
-  background: #65b459;
-  padding: 60px 0 0 0;
+  color: #65b459;
+  background: #EDEDED;
+  padding: 100px 0 100px 0;
   .text {
-    margin-bottom: 30px;
-    border: 2px solid rgba(250,250,250,0.2);
     padding: 30px;
     border-radius: 20px;
     h3 {
@@ -1338,17 +1346,13 @@ header {
     font-size: 13pt;
     padding: 10px 20px;
     margin: 0 5px;
+    font-weight: 400;
     .transition(transform, 0.1s, ease-in);
     &:hover {
       transform: scale(1.1);
     }
     &.btn-primary {
-      background: #fff;
-      color: #65b459;
-    }
-    &.btn-secondary {
-      background: none;
-      border: 1px solid #fff;
+      background: #65b459;
       color: #fff;
     }
   }
@@ -1358,10 +1362,18 @@ header {
 
 /***************** DEL 26 - Du har makten ******************/
 
+
+@-webkit-keyframes share {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.1) }
+    50% { box-shadow: 0 0 0 5px rgba(255,255,255,0.5) }
+    100% { box-shadow: 0 0 0 10px rgba(255,255,255,0) }
+}
+
+
 .del26 {
   color: #fff;
   background: #65b459;
-  padding: 60px 0 180px 0;
+  padding: 100px 0 100px 0;
   .text {
     margin-bottom: 30px;
   }
@@ -1371,19 +1383,36 @@ header {
     text-shadow: none;
     font-size: 13pt;
     padding: 10px 20px;
-    margin: 0 5px;
-    .transition(transform, 0.1s, ease-in);
+    margin: 0 8px;
+    animation: share 1.8s linear infinite;
+    border-radius: 30px;
+    background: #fff;
+    color: #65b459;
+    .transition(transform, 0.15s, ease-in);
     &:hover {
       transform: scale(1.1);
     }
-    &.btn-primary {
-      background: #fff;
-      color: #65b459;
-    }
-    &.btn-secondary {
-      background: none;
-      border: 1px solid #fff;
-      color: #fff;
-    }
+  }
+}
+
+
+footer {
+  color: #fff;
+  background: darken(#65b459, 10%);
+  padding: 60px;
+  text-align: center;
+  .vegosvar {
+    margin-bottom: 15px;
+    width: 150px;
+  }
+  hr {
+    width: 60%;
+    opacity: 0.3;
+  }
+  p {
+    margin: 0;
+  }
+  small {
+    font-size: 9pt;
   }
 }
