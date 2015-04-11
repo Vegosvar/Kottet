@@ -287,6 +287,7 @@ header {
 }
 
 
+
 .del1 {
   background: #141C26;
   padding: 60px 0 0 0;
@@ -347,6 +348,14 @@ header {
   .moon {
     z-index: 1;
     animation:spin 30s linear infinite;
+  }
+  .astronaut {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    z-index: 1;
+    width: 100px;
+    animation:spin 70s linear infinite;
   }
   h1 {
     font-size: 45px !important;
@@ -412,8 +421,8 @@ header {
 
 @keyframes tease { 
   0% { transform:rotate(10deg); }
-  5% { transform:rotate(16deg); }
-  10% { transform:rotate(10deg); } 
+  10% { transform:rotate(16deg); }
+  20% { transform:rotate(10deg); } 
   100% { transform:rotate(10deg); } 
 }
 
@@ -429,7 +438,7 @@ header {
     position: absolute;
     left: 74%;
     bottom: 58%;
-    animation: tease 3s infinite;
+    animation: tease 1s infinite;
   }
   .orange_eaten {
     display: none;
