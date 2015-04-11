@@ -1354,9 +1354,12 @@ header {
     text-shadow: none;
     font-size: 13pt;
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 0 5px 15px 5px;
     font-weight: 400;
     .transition(transform, 0.1s, ease-in);
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     &:hover {
       transform: scale(1.1);
     }
@@ -1392,7 +1395,7 @@ header {
     text-shadow: none;
     font-size: 13pt;
     padding: 10px 20px;
-    margin: 0 8px;
+    margin: 0 8px 30px 8px;
     animation: share 1.8s linear infinite;
     border-radius: 30px;
     background: #fff;
@@ -1400,6 +1403,14 @@ header {
     .transition(transform, 0.15s, ease-in);
     &:hover {
       transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 13px 20px;
+      margin: 0 0px 30px 0px;
+      &:hover {
+        transform: scale(1);
+      }
     }
   }
 }
@@ -1420,8 +1431,11 @@ footer {
   }
   p {
     margin: 0;
+    line-height: 1.4;
   }
   small {
     font-size: 9pt;
+    line-height: 20px;
+    display: inherit;
   }
 }
