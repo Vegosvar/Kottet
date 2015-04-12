@@ -1366,7 +1366,10 @@ header {
     .voting {
       p {
         color: #888;
-        font-size: 9pt;
+        font-size: 12pt;
+        @media (max-width: 768px) {
+          font-size: 10pt;
+        }
       }
       .vote {
         position: relative;

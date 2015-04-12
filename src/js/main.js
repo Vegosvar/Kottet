@@ -68,8 +68,8 @@ $(function () {
 
     messages: {
       total_votes: '{{VOTES}}',
-      success: '<div class="answer"><h3>Tack för din röst!</h3></div>',
-      error: '<div class="answer"><h3>Du har redan röstat!</h3></div>'
+      success: '<div class="col-sm-12"><div class="answer"><h3>Tack för din röst!</h3></div></div>',
+      error: '<div class="col-sm-12"><div class="answer"><h3>Du har redan röstat!</h3></div></div>'
     }
   })
 })
