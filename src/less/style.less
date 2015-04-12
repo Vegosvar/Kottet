@@ -1337,6 +1337,14 @@ header {
 
 /***************** DEL 25 - Rösta ******************/
 
+
+@-webkit-keyframes glow {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+
 .del25 {
   color: #65b459;
   background: #EDEDED;
@@ -1345,27 +1353,100 @@ header {
     padding: 30px;
     border-radius: 20px;
     h3 {
+      margin-bottom: 40px;
+    }
+    hr {
+      border-color: #BFBFBF !important;
+    }
+    .note {
+      color: #777;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+    .voting {
+      p {
+        color: #888;
+        font-size: 9pt;
+      }
+      .vote {
+        position: relative;
+        height: 400px;
+        background: #e1e1e1;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 5px;
+        .item {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          background: #65b459;
+          border-radius: 0 0 3px 3px;
+          animation: glow 3s infinite;
+          &.yes {
+            background: #65b459;
+            span {
+              color: #65b459;
+            }
+          }
+          &.maybe {
+            background: #577CB2;
+            span {
+              color: #577CB2;
+            }
+          }
+          &.no {
+            background: #C2722F;
+            span {
+              color: #C2722F;
+            }
+          }
+          span {
+            display: block;
+            text-align: center;
+            position: absolute;
+            font-weight: 700;
+            top: -35px;
+            font-size: 12pt;
+            width: 100%;
+            @media (max-width: 768px) {
+              font-size: 9pt;
+            }
+          }
+        }
+      }
+    }
+    .form {
       margin-bottom: 30px;
+      .btn {
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+        font-size: 13pt;
+        padding: 15px 0px;
+        width: 100%;
+        font-weight: 400;
+        color: #fff;
+        background: #555;
+        .transition(background, 0.1s, ease-in);
+        @media (max-width: 768px) {
+          font-size: 11pt;
+        }
+        &:hover {
+          background: #333;
+        }
+        &:active {
+          background: #111;
+        }
+      }    
     }
-  }
-  .btn {
-    border: none;
-    box-shadow: none;
-    text-shadow: none;
-    font-size: 13pt;
-    padding: 10px 20px;
-    margin: 0 5px 15px 5px;
-    font-weight: 400;
-    .transition(transform, 0.1s, ease-in);
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-    &:hover {
-      transform: scale(1.1);
-    }
-    &.btn-primary {
-      background: #65b459;
-      color: #fff;
+    .answer {
+      background: #e1e1e1;
+      padding: 30px 15px;
+      border-radius: 3px;
+      h3 {
+        color: #777;
+        margin: 0;
+      }
     }
   }
 }
