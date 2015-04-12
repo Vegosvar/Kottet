@@ -46,7 +46,7 @@ $(function () {
         result: '.item.yes',
         result_percentage: '.percentage.yes'
       },
-      
+
       no: {
         button: '.btn-no',
         result: '.item.no',
@@ -59,7 +59,7 @@ $(function () {
         result_percentage: '.percentage.maybe'
       }
     },
-    
+
     elements: {
       total_votes: '.votes',
       success: '#voting-form',

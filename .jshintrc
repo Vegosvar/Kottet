@@ -13,6 +13,7 @@
   "browser": true,
   "predef": [
     "navigator",
-    "Modernizr"
+    "Modernizr",
+    "Voting"
   ]
 }
