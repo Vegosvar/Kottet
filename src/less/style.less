@@ -264,7 +264,12 @@ header {
 }
 
 @keyframes spin { 
-  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+  100% { transform:rotate(360deg); } 
+}
+
+@keyframes moon { 
+  0% { background-position: 0px; } 
+  100% { transform:rotate(360deg); background-position: 102px; }
 }
 
 @keyframes tilt { 
@@ -286,6 +291,10 @@ header {
   100% { top: 100%; right: 100%; opacity: 0; }
 }
 
+@keyframes scratch { 
+  0% { background-position: 0px; }
+  100% { background-position: 230px; }
+}
 
 
 .del1 {
@@ -327,7 +336,7 @@ header {
     }
     &.functional {
       .transition(all, 0.1s, ease-in-out);
-      animation: tilt 8s infinite;
+      animation: tilt 5s infinite;
       span {
         opacity: 0;
       }
@@ -346,8 +355,13 @@ header {
     }
   }
   .moon {
+    display: inline-block;
+    width: 102px;
+    height: 102px;
     z-index: 1;
-    animation:spin 30s linear infinite;
+    border-radius: 500px;
+    animation: moon 10s linear infinite;
+    background: #BBB494 url(../img/moon.svg) 0px 0px;
   }
   .astronaut {
     position: absolute;
@@ -359,12 +373,17 @@ header {
   }
   h1 {
     font-size: 45px !important;
+    font-weight: 700;
     margin-top: 40px;
     margin-bottom: 20px;
     border-bottom: 2px solid rgba(250,250,250,0.1);
     display: inline-block;
     padding-bottom: 17px;
     padding: 0px 20px 19px 20px;
+    background: #fff url(../img/scratch_dark.svg) 0px 0px;
+    animation: scratch 0.253s linear forwards infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .earth {
     margin-top: 80px;
@@ -670,9 +689,16 @@ header {
 
 /***************** DEL 10 - Lamm ******************/
 
+
+@keyframes clouds { 
+  0% { background-position: 0px } 
+  100% { background-position: 600px; } 
+}
+
 .del10 {
   color: #fff;
-  background: #A1B4BF;
+  background: #A1B4BF url(../img/clouds.svg) 0px 0px;
+  animation: clouds 40s linear infinite;
   .text {
     padding-top: 100px;
     padding-bottom: 60px;
