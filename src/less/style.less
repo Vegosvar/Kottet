@@ -165,7 +165,7 @@ header {
     color: @color-light;
     margin-bottom: 0;
     background: @brand-color;
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.04);
+    opacity: 0.9;
     z-index: 100;
     width: 100%;
     .fixed-container {
@@ -210,8 +210,9 @@ header {
 
 
 .hero {
+  background: @brand-color;
   padding-top: 200px;
-  padding-bottom: 170px;
+  padding-bottom: 200px;
   text-align: center;
   .transition(padding-top, 0.1s, ease-in);
   @media (max-width: 768px) { 
