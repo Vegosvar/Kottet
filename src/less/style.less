@@ -159,6 +159,9 @@ img {
 
 
 header {
+  @media (max-width: 768px) {
+    display: none;
+  }
   &.menu {
     position: fixed;
     border: none;
@@ -224,11 +227,11 @@ header {
     margin-bottom: 30px;
   }
   .creds {
-    opacity: 0.2;
+    opacity: 1;
     .transition(all, 0.1s, ease-in);
     width: 180px;
     &:hover {
-      opacity: 0.5;
+      opacity: 0.9;
     }
     @media (max-width: 768px) { 
       width: 130px;
