@@ -36,7 +36,6 @@ $(function () {
     $('.orange_gone').addClass('show')
   })
 
-
   Voting.init({
     url: 'https://voting.mjolken.se:443',
     id: 'Kottet',
