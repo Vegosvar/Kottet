@@ -114,6 +114,9 @@ gulp.task('favicon', function (callback) {
       vinylMode: true,
       background: '#eee',
       appName: 'Köttet'
+    },
+    icons: {
+      opengraph: false
     }
   }, function (code) {
     favicon_html = code.split('\n').join('\n  ')
