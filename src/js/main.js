@@ -69,7 +69,7 @@ $(function () {
 
     messages: {
       total_votes: '{{VOTES}}',
-      success: '<div class="col-sm-12"><div class="answer"><h3>Rösten mottagen!</h3><p style="color: #888;">Här får du en kaka som tack</p><a href="http://vegoteket.se/2014/03/kladdkaka/" title="Recept på kladdkaka"><img src="/assets/img/cookie.svg"></a></div></div>',
+      success: '<div class="col-sm-12"><div class="answer"><h3>Rösten mottagen!</h3><p style="color: #888;">Här får du en kaka som tack</p><a href="http://vegoteket.se/2014/03/kladdkaka/" title="Recept på kladdkaka" target="_blank"><img src="/assets/img/cookie.svg"></a></div></div>',
       error: '<div class="col-sm-12"><div class="answer"><h3>Du har redan röstat!</h3></div></div>'
     }
   })
