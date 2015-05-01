@@ -640,7 +640,7 @@ header {
       .number {
         font-weight: 700;
       }
-      .animal {
+      .desc {
         font-weight: 300;
         display: block;
         font-size: 13pt;
@@ -696,7 +696,7 @@ header {
     .stat {
       position: relative;
       display: inline-block;
-      height: 600px;
+      height: 350px;
       width: 50%;
       @media (max-width: 768px) { 
         width: 70%;
@@ -713,6 +713,15 @@ header {
         }
       }
     }
+    .landanimals .content {
+      background: #E0B8A6;
+    }
+    .animalfood .content {
+      background: #777;
+    }
+    .fish .content {
+      background: #5393D3;
+    }
     .sweden .content {
       background: #FFCB04;
     }
@@ -726,11 +735,13 @@ header {
       }
       .number {
         font-weight: 700;
+        margin-bottom: 5px;
       }
-      .animal {
+      .desc {
         font-weight: 300;
         display: block;
         font-size: 13pt;
+        line-height: 1.2;
         @media (max-width: 768px) {
           font-size: 7pt; 
         }
@@ -876,9 +887,50 @@ header {
   }
 }
 
-/***************** DEL 13 - Andra djur ******************/
+
+
+
+/***************** DEL 13 - Fisken ******************/
+
+
+@keyframes fish_bubbles { 
+  0% { background-position: 0px 0px; } 
+  100% { background-position: 0px -572px; } 
+}
 
 .del13 {
+  color: #fff;
+  background: #4D5666 url(../img/fish_bubbles.svg) 0px 0px;
+  animation: fish_bubbles 20s linear infinite;
+  .text {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @media (max-width: 768px) { 
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    hr {
+      opacity: 0.1;
+      border-top: 2px solid #fff;
+    }
+  }
+  .primary_img {
+    width: 80%;
+    margin-top: 140px;
+    margin-bottom: 0;
+    @media (max-width: 768px) { 
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding: 0 10%;
+    }
+  }
+}
+
+
+/***************** DEL 14 - Andra djur ******************/
+
+.del14 {
   padding: 100px 0;
   color: #fff;
   background: #808184;
@@ -897,7 +949,7 @@ header {
 
 
 
-/***************** DEL 14 - Svenska djur ******************/
+/***************** DEL 15 - Svenska djur ******************/
 
 
 @keyframes page_one { 
@@ -916,7 +968,7 @@ header {
   100% { top: 0;} 
 }
 
-.del14 {
+.del15 {
   padding: 100px 0 0 0;
   color: #fff;
   background: #1B75BB;
@@ -1017,9 +1069,9 @@ header {
 
 
 
-/***************** DEL 15 - Klimatpåverkan ******************/
+/***************** DEL 16 - Klimatpåverkan ******************/
 
-.del15 {
+.del16 {
   padding: 100px 0 60px 0;
   color: #fff;
   background: #0A0E17;
@@ -1097,7 +1149,7 @@ header {
 
 
 
-/***************** DEL 16 - Bioomassa ******************/
+/***************** DEL 17 - Bioomassa ******************/
 
 
 @keyframes left_gear { 
@@ -1108,7 +1160,7 @@ header {
   100% { transform:rotate(-360deg); } 
 }
 
-.del16 {
+.del17 {
   padding: 100px 0 100px 0;
   color: #fff;
   background: #242B27;
@@ -1143,7 +1195,7 @@ header {
 
 
 
-/***************** DEL 17 - Slakten ******************/
+/***************** DEL 18 - Slakten ******************/
 
 @keyframes lamp_on { 
   0% { transform:rotate(-2deg); opacity: 0; } 
@@ -1179,7 +1231,7 @@ header {
   100% { opacity: 0.8; } 
 }
 
-.del17 {
+.del18 {
   color: #fff;
   background: #31313A;
   .text {
@@ -1226,9 +1278,9 @@ header {
 }
 
 
-/***************** DEL 18 - Bedövning ******************/
+/***************** DEL 19 - Bedövning ******************/
 
-.del18 {
+.del19 {
   color: #333;
   background: #D5D5D5;
   padding: 100px 0;
@@ -1240,7 +1292,7 @@ header {
 
 
 
-/***************** DEL 19 - Elbedövning ******************/
+/***************** DEL 20 - Elbedövning ******************/
 
 @keyframes lightning { 
   0% { opacity: 0;}
@@ -1261,7 +1313,7 @@ header {
   100% { opacity: 0; top: 60%; left: 42%;}
 }
 
-.del19 {
+.del20 {
   color: #333;
   background: #DEDEDE;
   padding: 100px 0;
@@ -1320,7 +1372,7 @@ header {
 }
 
 
-/***************** DEL 20 - Gas ******************/
+/***************** DEL 21 - Gas ******************/
 
 @keyframes steam { 
   0% { opacity: 0; top: -5%; }
@@ -1328,7 +1380,7 @@ header {
   100% { opacity: 0; top: -30%; }
 }
 
-.del20 {
+.del21 {
   color: #333;
   background: #D5D5D5;
   padding: 100px 0;
@@ -1363,9 +1415,9 @@ header {
 }
 
 
-/***************** DEL 21 - Bultpistol ******************/
+/***************** DEL 22 - Bultpistol ******************/
 
-.del21 {
+.del22 {
   color: #333;
   background: #DEDEDE;
   padding: 100px 0;
@@ -1376,7 +1428,7 @@ header {
 
 
 
-/***************** DEL 22 - Avblodning ******************/
+/***************** DEL 23 - Avblodning ******************/
 
 @keyframes hanging { 
   0% { transform:rotate(-1deg);} 
@@ -1384,7 +1436,7 @@ header {
   100% { transform:rotate(-1deg);} 
 }
 
-.del22 {
+.del23 {
   color: #333;
   background: #D5D5D5;
   padding: 100px 0;
@@ -1411,7 +1463,7 @@ header {
 
 
 
-/***************** DEL 23 - Styckning ******************/
+/***************** DEL 24 - Styckning ******************/
 
 
 @-webkit-keyframes hanging_pig {
@@ -1419,7 +1471,7 @@ header {
     to { background-position: 194px top; }
 }
 
-.del23 {
+.del24 {
   color: #333;
   background: #DEDEDE;
   padding: 100px 0;
@@ -1443,9 +1495,9 @@ header {
 
 
 
-/***************** DEL 24 - Finns det andra alternativ? ******************/
+/***************** DEL 25 - Finns det andra alternativ? ******************/
 
-.del24 {
+.del25 {
   color: #65b459;
   background: #F7F7F7;
   padding: 120px 0;
@@ -1457,7 +1509,7 @@ header {
 
 
 
-/***************** DEL 25 - Rösta ******************/
+/***************** DEL 26 - Rösta ******************/
 
 
 @-webkit-keyframes glow {
@@ -1467,7 +1519,7 @@ header {
 }
 
 
-.del25 {
+.del26 {
   color: #65b459;
   background: #EDEDED;
   padding: 100px 0 100px 0;
@@ -1584,7 +1636,7 @@ header {
 
 
 
-/***************** DEL 26 - Du har makten ******************/
+/***************** DEL 27 - Du har makten ******************/
 
 
 @-webkit-keyframes share {
@@ -1594,7 +1646,7 @@ header {
 }
 
 
-.del26 {
+.del27 {
   color: #fff;
   background: #65b459;
   padding: 100px 0 100px 0;
