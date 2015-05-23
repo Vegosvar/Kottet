@@ -105,7 +105,7 @@ gulp.task('less', function () {
 var favicon_html
 
 gulp.task('favicon', function (callback) {
-  return gulp.src('src/favicon/favicon.png')
+  gulp.src('src/favicon/favicon.png')
   .pipe(plugins.favicons({
     files: {
       iconsPath: '/assets/favicon'

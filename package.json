@@ -7,7 +7,7 @@
     "gh-pages": "^0.2.0",
     "gulp": "^3.8.11",
     "gulp-debug": "^2.0.0",
-    "gulp-favicons": "git://github.com/haydenbleasel/gulp-favicons#master",
+    "gulp-favicons": "^1.0.9",
     "gulp-install": "^0.2.0",
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.10.0",
