@@ -192,11 +192,11 @@ gulp.task('deploy', ['prod'], function (callback) {
       email: process.env.GIT_EMAIL
     }
 
-    options.repo = util.format('https://%s:%s@github.com/Vegosvar/Kottet.git', process.env.GIT_NAME, process.env.GIT_TOKEN)
+    options.repo = util.format('https://%s:%s@github.com/%s.git', process.env.GIT_NAME, process.env.GIT_TOKEN, process.env.TRAVIS_REPO_SLUG)
   }
 
   require('child_process').exec('git rev-parse HEAD', function (error, stdout, stderr) {
-    options.message = 'Updating to Vegosvar/Kottet@' + stdout.replace('\n', '')
+    options.message = 'Updating to ' + process.env.TRAVIS_REPO_SLUG + '@' + stdout.replace('\n', '')
     ghpages.publish(path.join(process.cwd(), 'dist'), options, callback)
   })
 })
