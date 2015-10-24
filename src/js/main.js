@@ -36,40 +36,4 @@ $(function () {
     $('.orange_gone').addClass('show')
   })
 
-  Voting.init({
-    url: 'https://voting.mjolken.se:443',
-    id: 'Kottet',
-    no_percentages: true,
-    choices: {
-      yes: {
-        button: '.btn-yes',
-        result: '.item.yes',
-        result_percentage: '.percentage.yes'
-      },
-
-      no: {
-        button: '.btn-no',
-        result: '.item.no',
-        result_percentage: '.percentage.no'
-      },
-
-      maybe: {
-        button: '.btn-maybe',
-        result: '.item.maybe',
-        result_percentage: '.percentage.maybe'
-      }
-    },
-
-    elements: {
-      total_votes: '.votes',
-      success: '#voting-form',
-      error: '#voting-form'
-    },
-
-    messages: {
-      total_votes: '{{VOTES}}',
-      success: '<div class="col-sm-12"><div class="answer"><h3>Rösten mottagen!</h3><p class="cookieText">Här får du en kaka som tack</p><a href="http://vegoteket.se/2014/03/kladdkaka/" title="Recept på kladdkaka" target="_blank"><img src="/assets/img/cookie.svg"></a></div></div>',
-      error: '<div class="col-sm-12"><div class="answer"><h3>Du har redan röstat!</h3></div></div>'
-    }
-  })
 })
